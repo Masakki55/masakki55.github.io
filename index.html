@@ -7,15 +7,20 @@
 <meta name="description" content="Indie Android apps by Masaki, a solo developer based in Singapore. Each app solves one problem well — no ad bloat, no analytics, no upsell traps. Currently building 乙4 学習ラボ (Japanese hazmat exam prep) and EDC Lumen Log (honest flashlight reviews), both targeting 2026 Q3 Closed Testing.">
 <style>
   :root {
-    --bg: #0a0e1a;
-    --bg-card: #141a2e;
-    --bg-card-hover: #1c2440;
-    --text: #e2e8f0;
-    --text-dim: #94a3b8;
-    --accent: #fbbf24;
-    --accent-2: #06b6d4;
-    --border: #1e293b;
-    --footer-bg: #0d1320;
+    /* Palette B — Warm Cream Light (cross-load SSOT: .claude/rules/color-strategy.md v1.0 § A) */
+    --bg: #fefce8;             /* warm cream, no pure-white harshness */
+    --text: #1c1917;           /* stone-900 warm near-black, AAA contrast 16.91:1 */
+    --text-dim: #78716c;       /* stone-500 metadata */
+    --accent: #b45309;         /* amber-700 dark amber — links, badges */
+    --accent-2: #fbbf24;       /* amber-400 — highlights, buttons */
+    --accent-orange: #f97316;  /* orange-500 — score numbers, callouts */
+    --border: #d6d3d1;         /* stone-300 warm gray separators */
+    --bg-card: #fff7ed;        /* orange-50 — card backgrounds */
+    --bg-card-hover: #fef3c7;  /* amber-100 — card hover */
+    --pure-card: #ffffff;      /* pure white — emphasis cards */
+    --good: #16a34a;           /* green-600 — checkmarks, success */
+    --footer-bg: #fffbeb;      /* amber-50 — footer-zone bg */
+    --highlight-yellow: #fef08a; /* Dan Kennedy yellow-highlighter */
   }
   * { box-sizing: border-box; }
   body {
@@ -25,7 +30,8 @@
     max-width: 920px;
     margin: 0 auto;
     padding: 32px 24px;
-    line-height: 1.7;
+    font-size: 20px;       /* typography-sales-strategy.md v1.0 § 原則 1 — body 20px (EN long-form) */
+    line-height: 1.7;       /* per typography rule § 原則 1 EN line-height 1.5-1.7 */
   }
   /* HERO (above-the-fold, single primary CTA) */
   .hero {
@@ -35,11 +41,14 @@
     margin-bottom: 32px;
   }
   .hero h1 {
-    color: var(--accent);
-    font-size: 2rem;
+    color: var(--text);
+    font-size: 3rem;       /* typography-sales-strategy.md v1.0 — entry-page H1 48px */
     margin: 0 0 12px;
-    line-height: 1.3;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -0.01em;
   }
+  @media (max-width: 768px) { .hero h1 { font-size: 2rem; } }
   .hero .sub {
     color: var(--text);
     font-size: 1.05rem;
@@ -60,14 +69,16 @@
   }
   .hero .trust-row span { margin: 0 8px; }
   h2 {
-    color: var(--accent);
-    font-size: 1.4rem;
+    color: var(--text);
+    font-size: 1.875rem;   /* typography-sales-strategy.md v1.0 — H2 30px */
     margin-top: 44px;
     margin-bottom: 16px;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 2px solid var(--accent-2);
     padding-bottom: 8px;
+    line-height: 1.3;
+    font-weight: 700;
   }
-  h3 { color: var(--accent); font-size: 1.1rem; margin-top: 24px; }
+  h3 { color: var(--accent); font-size: 1.25rem; margin-top: 24px; font-weight: 700; }
   p, li { color: var(--text); margin-bottom: 10px; }
   a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
@@ -132,19 +143,19 @@
     margin-left: 8px;
     vertical-align: middle;
   }
-  .status-dev { background: #fb923c; color: #1a1a1a; }
-  .status-planning { background: #94a3b8; color: #1a1a1a; }
+  .status-dev { background: var(--accent-orange); color: var(--bg); font-weight: 600; }
+  .status-planning { background: var(--text-dim); color: var(--bg); font-weight: 600; }
   .app-card .primary-action {
     display: inline-block;
     background: var(--accent);
-    color: var(--bg);
+    color: #ffffff;
     padding: 8px 18px;
     border-radius: 6px;
     font-weight: 600;
     text-decoration: none;
     margin-right: 8px;
   }
-  .app-card .primary-action:hover { background: #fcd34d; }
+  .app-card .primary-action:hover { background: #92400e; /* amber-800, AAA 7.2:1 on white text */ }
   .app-card .secondary-action {
     color: var(--text-dim);
     font-size: 0.9rem;
@@ -173,7 +184,7 @@
     border-bottom: 1px solid var(--border);
   }
   .trust-list li:last-child { border-bottom: none; }
-  .trust-list .check { color: #34d399; font-weight: 600; margin-right: 8px; }
+  .trust-list .check { color: var(--good); font-weight: 600; margin-right: 8px; }
 
   /* AFFILIATE DISCLOSURE BLOCK (FTC + Japan ステマ規制 compliance) */
   .disclosure-block {
@@ -188,7 +199,7 @@
   .disclosure-block p:last-child { margin-bottom: 0; }
   .disclosure-block strong { color: var(--accent); }
   .disclosure-block .pr-mark {
-    color: var(--accent-2);
+    color: var(--accent-orange);
     font-weight: 600;
   }
 
@@ -207,7 +218,7 @@
   footer .updated { color: var(--text-dim); font-size: 0.8rem; margin-top: 6px; }
 
   @media (max-width: 600px) {
-    .hero h1 { font-size: 1.6rem; }
+    .hero h1 { font-size: 1.875rem; /* per typography v1.0 mobile minimum 1.875rem */ }
     .apps-grid { grid-template-columns: 1fr; }
   }
 </style>
