@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>乙4 学習ラボ — 1 問差で泣かないための危険物乙4 試験対策アプリ</title>
+<meta name="description" content="危険物取扱者 乙種第4類 試験対策 Android アプリ。500 問の自作問題、 政令番号付き解説、 引っかけ警告、 1 問差で落とす受験生を救う 4-axis 統計。 誇大広告ゼロ宣言。 無料版 + Pro ¥980 買い切り。 Masaki Made in Japan。">
+<style>
+  :root {
+    --bg: #0f1419;
+    --bg-card: #1e293b;
+    --bg-card-hover: #263548;
+    --text: #e2e8f0;
+    --text-dim: #94a3b8;
+    --accent: #fb923c;
+    --accent-2: #fbbf24;
+    --accent-3: #ef4444;
+    --border: #1e293b;
+  }
+  body {
+    font-family: -apple-system, "Hiragino Sans", "Yu Gothic UI", "Segoe UI", "Noto Sans JP", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 32px 24px;
+    line-height: 1.8;
+  }
+  nav {
+    background: var(--bg-card);
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 24px;
+    font-size: 0.92rem;
+  }
+  nav a { margin-right: 14px; color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  nav .portfolio-link { color: var(--text-dim); }
+
+  /* HERO (single primary CTA, benefit H1) */
+  .hero {
+    text-align: center;
+    padding: 16px 0 28px;
+    border-bottom: 1px solid #2a3447;
+    margin-bottom: 28px;
+  }
+  .hero h1 {
+    color: var(--accent);
+    font-size: 1.85rem;
+    margin: 0 0 12px;
+    line-height: 1.35;
+  }
+  .hero .sub {
+    color: var(--text);
+    font-size: 1.02rem;
+    margin: 0 0 14px;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero .primary-cta {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--bg);
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 12px 0 8px;
+    font-size: 1.02rem;
+  }
+  .hero .primary-cta:hover { background: #fdba74; }
+  .hero .secondary-line {
+    color: var(--text-dim);
+    font-size: 0.88rem;
+    margin-top: 10px;
+  }
+  .hero .secondary-line span { margin: 0 6px; }
+
+  h2 {
+    color: var(--accent);
+    font-size: 1.3rem;
+    margin-top: 36px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid #2a3447;
+    padding-bottom: 6px;
+  }
+  h3 { color: var(--accent); font-size: 1.05rem; margin-top: 20px; }
+  p, li { color: var(--text); margin-bottom: 10px; }
+  a { color: var(--accent); }
+  ul, ol { margin-left: 24px; margin-bottom: 16px; }
+  code { background: var(--bg-card); padding: 2px 6px; border-radius: 3px; color: var(--accent-2); font-size: 0.9em; }
+
+  /* PROBLEM block (PAS) */
+  .problem-block {
+    background: var(--bg-card);
+    border-left: 4px solid var(--accent-3);
+    padding: 16px 20px;
+    border-radius: 0 6px 6px 0;
+    margin: 18px 0;
+  }
+  .problem-block .label {
+    color: var(--accent-3);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  /* 差別化 3 空白地帯 callout */
+  .differentiation {
+    background: var(--bg-card);
+    border: 1px dashed var(--accent);
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin: 22px 0;
+  }
+  .differentiation h3 { margin-top: 0; color: var(--accent); }
+  .differentiation .label {
+    color: var(--accent-2);
+    font-weight: 600;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .differentiation ol li { margin-bottom: 12px; }
+  .differentiation strong { color: var(--accent); }
+
+  /* 信頼 4 軸 grid (JP density expectation) */
+  .trust-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+    margin: 18px 0;
+  }
+  .trust-card {
+    background: var(--bg-card);
+    border-radius: 8px;
+    padding: 16px 18px;
+    border-left: 3px solid var(--accent);
+  }
+  .trust-card .check { color: #34d399; font-weight: 600; margin-right: 6px; }
+  .trust-card .title { color: var(--accent); font-weight: 600; margin-bottom: 6px; display: block; }
+  .trust-card .body { font-size: 0.92rem; color: var(--text); margin-bottom: 0; }
+
+  /* COMPARISON TABLE */
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.92rem; }
+  th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid #2a3447; }
+  th { background: var(--bg-card); color: var(--accent); }
+
+  /* 引っかけポイント例 blockquote */
+  blockquote {
+    border-left: 4px solid var(--accent-2);
+    padding: 12px 18px;
+    margin: 14px 0;
+    background: var(--bg-card);
+    border-radius: 0 6px 6px 0;
+  }
+  blockquote .label {
+    color: var(--accent-2);
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  /* FAQ */
+  .faq-item {
+    background: var(--bg-card);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 10px 0;
+  }
+  .faq-item .q {
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .faq-item .a {
+    color: var(--text);
+    margin-bottom: 0;
+  }
+
+  /* AdMob 透明性 block */
+  .admob-block {
+    background: var(--bg-card);
+    border-left: 4px solid var(--accent);
+    padding: 14px 20px;
+    border-radius: 0 6px 6px 0;
+    margin: 18px 0;
+    font-size: 0.92rem;
+  }
+
+  /* DEVELOPER 情報 (JP trust signal) */
+  .dev-card {
+    background: var(--bg-card);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+  }
+  .dev-card .label {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+  }
+
+  /* FOOTER */
+  footer {
+    margin-top: 50px;
+    padding-top: 22px;
+    border-top: 1px solid #2a3447;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+  }
+  footer .links-row { margin: 8px 0; }
+  footer .links-row a { color: var(--text-dim); margin-right: 12px; text-decoration: underline; }
+  footer .updated { font-size: 0.8rem; margin-top: 6px; }
+  footer .pr-mark { color: var(--accent-2); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="portfolio-link">← ポートフォリオ</a>
+  <a href="index.html"><strong>ホーム</strong></a>
+  <a href="privacy.html">プライバシーポリシー</a>
+  <a href="https://twitter.com/otsu4_study_lab" target="_blank" rel="noopener">X</a>
+</nav>
+
+<!-- HERO: 空白地帯占有 H1 (「1 問差で泣かない」 = どの競合も使ってない) -->
+<section class="hero">
+  <h1>🔥 1 問差で泣かないための<br>乙4 試験対策アプリ</h1>
+  <p class="sub">
+    過去問を解くだけでは本番で落ちます。<strong>不正解の理由を法令根拠 (政令番号付き) で解説</strong>する乙4 学習ラボが、 「あと 1 問」 で落とす受験生を救います。 誇大広告ゼロ宣言。
+  </p>
+  <a href="#features" class="primary-cta">機能・無料版を見る →</a>
+  <p class="secondary-line">
+    <span>📚 500 問</span> ·
+    <span>📖 政令番号付き解説</span> ·
+    <span>⚠️ 引っかけ警告</span> ·
+    <span>📅 Closed Testing 2026 Q3</span>
+  </p>
+</section>
+
+<!-- PROBLEM (PAS framework、 受験生の痛点を最初に刺す) -->
+<h2>こんなお悩みありませんか</h2>
+<div class="problem-block">
+  <span class="label">★ 受験生のリアル</span>
+  <p style="margin-bottom: 0;">
+    過去問を <strong>3 周しても</strong>、 本番でひっかけ問題に引っかかって <strong>1 問差で不合格</strong>。
+    解説アプリを使っても 「答えは A です」 だけで <em>なぜ A なのか</em> がわからない。
+    再受験料 ¥3,800 を払って もう一度 (年 2 回しか試験なし)。
+    「絶対合格」 「裏技」 系の誇大広告アプリに疲れた。
+  </p>
+</div>
+
+<!-- 3 空白地帯 (差別化 — どの競合も使ってない) -->
+<div class="differentiation">
+  <span class="label">他のアプリとの違い (3 つの "空白地帯")</span>
+  <h3>📌 競合 7 アプリ調査の結果、 どこも対応してなかった 3 つ</h3>
+  <ol>
+    <li>
+      <strong>「1 問差で落とす」 対策に特化</strong> — 引っかけ問題に「合否分岐ポイント」 マーク。 似た用語 (第一石油類 vs アルコール類 / 棒状 vs 霧状) の混同ゾーンを徹底警告。
+    </li>
+    <li>
+      <strong>解説に政令番号 + 条文を明示</strong> — 「政令第 306 号 別表第三より」 と一次ソースを表示。 e-Gov 法令検索で あなた自身が verify 可能。 二次ソース (講座サイト / YouTube) 依拠の解説はゼロ。
+    </li>
+    <li>
+      <strong>誇大広告ゼロ宣言</strong> — 「絶対合格」 「裏技」 「100% 出る」 等の表現は使いません。 試験対策に必要なのは、 1 問差を埋めるための「ひっかけ警告 + 法令数値暗記 + 過去問演習」 のみです。
+    </li>
+  </ol>
+</div>
+
+<!-- 信頼 4 軸 (日本人受験生が重視する評価軸: 競合分析より) -->
+<h2>信頼できる学習を、 という方へ</h2>
+<p style="margin-bottom: 14px;">日本人受験生が試験対策アプリを選ぶ <strong>4 大信頼要因</strong> 全てに配慮しています:</p>
+
+<div class="trust-grid">
+  <div class="trust-card">
+    <span class="title"><span class="check">✓</span> ① 誠実さ</span>
+    <p class="body">「絶対合格」 等の誇大広告ゼロ。 合格率 公表しません (アプリ単体で合格は保証できないため。 学習補助具として正直に位置付け)。</p>
+  </div>
+  <div class="trust-card">
+    <span class="title"><span class="check">✓</span> ② 法令根拠</span>
+    <p class="body">全問題・全解説で 政令第 306 号 / 消防法 / 規格省令 等の一次ソース突合済。 解説タブに 条文番号 + 公布年 を明示。</p>
+  </div>
+  <div class="trust-card">
+    <span class="title"><span class="check">✓</span> ③ 顔の見える開発者</span>
+    <p class="body">シンガポール在住の個人開発者 Masaki (IT 業界 20 年)、 ブランド <a href="../index.html">Masaki Made in Japan</a>。 匿名運営ではなく email 公開: <a href="mailto:mk.madeinjapan@gmail.com">mk.madeinjapan@gmail.com</a></p>
+  </div>
+  <div class="trust-card">
+    <span class="title"><span class="check">✓</span> ④ 買い切り価格</span>
+    <p class="body">Pro 版 <strong>¥980 買い切り</strong>。 月額サブスクなし、 ¥490 系の薄い既存アプリより上、 法人系 ¥2,000+ サブスクより下。 「高すぎず安っぽくない」 中間ポジション。</p>
+  </div>
+</div>
+
+<!-- 主な機能 (anchor #features) -->
+<h2 id="features">主な機能</h2>
+<table>
+  <thead>
+    <tr><th>機能</th><th>内容</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>📚 500 問の自作問題</td><td>主軸 3 科目 (法令 / 基礎物理化学 / 性質・消火) × サブ 6 分類、 著作権クリア</td></tr>
+    <tr><td>⚠️ 引っかけ警告</td><td>第一石油類 vs アルコール類、 棒状 vs 霧状 等の混同ポイントに「合否分岐」 マーク</td></tr>
+    <tr><td>📖 政令番号付き解説</td><td>「政令第 306 号 別表第三より」 と一次ソースを表示。 二次ソース依拠の解説ナシ</td></tr>
+    <tr><td>📊 4 軸統計</td><td>科目別・難易度別・正答率・直近 7 日推移を可視化</td></tr>
+    <tr><td>🔁 復習モード</td><td>間違えた問題のみを spaced repetition で出題</td></tr>
+    <tr><td>📝 模試モード</td><td>本番形式 35 問 (Phase 1 後半で追加予定)</td></tr>
+    <tr><td>🌙 ダークモード</td><td>夜の通勤学習に</td></tr>
+    <tr><td>📶 問題演習はオフライン</td><td>電波なしでも問題演習・復習・統計はフル機能 (詳細は AdMob 透明性 ↓ 参照)</td></tr>
+  </tbody>
+</table>
+
+<!-- 引っかけポイント例 (具体性で信頼補強) -->
+<h2>引っかけポイント例</h2>
+
+<blockquote>
+<span class="label">★ 例 1: 第一石油類 vs アルコール類</span>
+アセトン (CH₃COCH₃) は炭素数 3 の有機溶剤、 一見アルコール類のように見えるが <strong>第一石油類</strong> (引火点 -20℃、 指定数量 200L)。 アルコール類の定義 = 「炭素数 1-3 の <strong>飽和一価アルコール</strong>」 で、 アセトンはケトンなので該当しない。 <br><span style="color: var(--text-dim); font-size: 0.85rem;">出典: 政令第 306 号 別表第三</span>
+</blockquote>
+
+<blockquote>
+<span class="label">★ 例 2: 棒状放射 vs 霧状放射 (強化液)</span>
+強化液の油火災 (B 火災) 適応は <strong>霧状放射のみ</strong>。 棒状放射では油火災に適応しない。 ★ 試験で 1 問差で落ちる人多数。 <br><span style="color: var(--text-dim); font-size: 0.85rem;">出典: 消火器の技術上の規格を定める省令 (昭和 50 年 自治省令第 26 号)</span>
+</blockquote>
+
+<!-- 無料 vs Pro -->
+<h2>無料版 vs Pro 版</h2>
+<table>
+  <thead>
+    <tr><th>項目</th><th>無料版</th><th>Pro 版 (¥980 買い切り)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>500 問</td><td>✅ 全問</td><td>✅ 全問</td></tr>
+    <tr><td>政令番号付き解説</td><td>✅</td><td>✅</td></tr>
+    <tr><td>引っかけ警告</td><td>✅</td><td>✅</td></tr>
+    <tr><td>復習モード</td><td>✅</td><td>✅</td></tr>
+    <tr><td>4 軸統計</td><td>✅</td><td>✅</td></tr>
+    <tr><td>広告</td><td>AdMob バナー + インタースティシャル</td><td>❌ 完全広告なし</td></tr>
+    <tr><td>AdMob SDK (広告 ID 等収集)</td><td>あり (詳細: <a href="privacy.html">privacy §4.1</a>)</td><td>❌ SDK 自体未搭載</td></tr>
+    <tr><td>広告除去 IAP</td><td>¥500 で買い切り可</td><td>—</td></tr>
+    <tr><td>プレミアムアイコン</td><td>—</td><td>✅</td></tr>
+  </tbody>
+</table>
+<p>無料版で全学習機能 (500 問 + 解説 + 統計 + 復習) が使えます。 広告が気にならない方は無料版で十分です。</p>
+
+<!-- AdMob 透明性 (Google Play Data Safety 必須) -->
+<div class="admob-block">
+  <strong>📢 AdMob (無料版広告) について</strong><br>
+  無料版では Google AdMob のバナー広告 + インタースティシャル広告を表示します。 Google Mobile Ads SDK は以下 <strong>4 カテゴリのデータを SDK 動作時に自動的に</strong> Google に収集・共有します (Google 公式 SDK ガイダンス準拠):
+  <ul style="margin: 8px 0 8px 24px;">
+    <li>デバイス識別子 (Advertising ID)</li>
+    <li>IP アドレス</li>
+    <li>ユーザーインタラクション (広告閲覧・タップの broad event signals)</li>
+    <li>診断データ (Crashes / Performance、 SDK 自動収集)</li>
+  </ul>
+  これは Google Play Data Safety 申告通り (「収集」 + 「共有」) です。 詳細は <a href="privacy.html">privacy §4.1</a> で。
+  <br><br>
+  <strong>4 カテゴリすべてを完全停止したい場合は <a href="privacy.html#admob">Pro 版 ¥980</a> をご利用ください</strong> (AdMob SDK 自体を含まないため、 SDK 動作も発生しません)。 広告除去 IAP (¥500) では広告表示は停止しますが、 SDK 自体は残存するため診断データ等は SDK 動作時に Google に送信される可能性があります — 完全停止には Pro 版を推奨します。
+</div>
+
+<!-- FAQ (日本人 user expect this) -->
+<h2>よくある質問</h2>
+
+<div class="faq-item">
+  <p class="q">Q1. 無料で全問題使えますか?</p>
+  <p class="a">はい、 500 問すべて + 解説 + 統計 + 復習モードまで無料版でフル利用可能です。 違いは AdMob 広告の表示のみです。 「無料 N 問まで」 のような制限はありません。</p>
+</div>
+
+<div class="faq-item">
+  <p class="q">Q2. オフラインで使えますか?</p>
+  <p class="a">問題演習・解説・統計・復習などの<strong>学習機能はすべて端末内で完結し、 通信不要</strong>です。 ただし無料版は AdMob 広告配信のため通信が発生します。 Pro 版 (¥980 買い切り) は AdMob SDK を含まないため完全オフラインで動作します。</p>
+</div>
+
+<div class="faq-item">
+  <p class="q">Q3. 問題は最新の試験範囲に対応していますか?</p>
+  <p class="a">2026 年 5 月時点の出題範囲 (改正消防法 + 政令第 306 号現行版) に対応しています。 法改正があった場合は次回バージョン update で反映 (アプリ内 release note でお知らせ)。 「最終更新日」 はアプリ Setting 画面で確認できます。</p>
+</div>
+
+<div class="faq-item">
+  <p class="q">Q4. アカウント登録は必要ですか?</p>
+  <p class="a">不要です。 個人情報の入力は一切ありません。 学習進捗は端末内に保存され、 アプリのアンインストールで完全に削除されます (詳細: <a href="privacy.html">プライバシーポリシー</a>)。</p>
+</div>
+
+<div class="faq-item">
+  <p class="q">Q5. なぜ「合格率」 や「使用者の声」 を載せないんですか?</p>
+  <p class="a">合格はアプリ単体ではなく受験生本人の努力で達成されるものだからです。 「このアプリで合格率 90%」 のような<strong>誇大広告ゼロ宣言</strong>を運営方針としています。 アプリは学習補助具として正直に位置付け、 効果は使ってから判断してください。</p>
+</div>
+
+<div class="faq-item">
+  <p class="q">Q6. 開発者は信頼できますか?</p>
+  <p class="a">シンガポール在住の個人開発者 Masaki (IT 業界 20 年) が運営しています。 メール公開 (mk.madeinjapan@gmail.com)、 ブランド <a href="../index.html">Masaki Made in Japan</a> で他にも EDC Lumen Log (英語/日本語 flashlight review アプリ) を開発中。 匿名運営ではありません。</p>
+</div>
+
+<!-- 開発者情報 (顔の見える開発者: JP trust signal) -->
+<h2>開発者について</h2>
+<div class="dev-card">
+  <p><span class="label">開発者:</span> <strong>Masaki</strong> (Masakimadeinjapan)</p>
+  <p><span class="label">所在地:</span> シンガポール (日本国籍)</p>
+  <p><span class="label">経歴:</span> IT 業界 20 年。 Android アプリ開発は学習中、 Flutter + Riverpod 2.x + SQLite で乙4 学習ラボを Phase 1 開発中</p>
+  <p><span class="label">連絡先:</span> <a href="mailto:mk.madeinjapan@gmail.com">mk.madeinjapan@gmail.com</a> (1-3 営業日以内に返信) · X: <a href="https://twitter.com/otsu4_study_lab" target="_blank" rel="noopener">@otsu4_study_lab</a></p>
+  <p style="margin-bottom: 0;"><span class="label">他のアプリ:</span> <a href="../edc-flashlight/index.html">EDC Lumen Log</a> (英語/日本語 flashlight review、 2026 Q3 Closed Testing 予定)</p>
+</div>
+
+<!-- 進捗状況 + 最終更新 -->
+<h2>進捗状況</h2>
+<table>
+  <tbody>
+    <tr><td><strong>現在</strong></td><td>Phase 1 開発中 (Flutter + Material 3、 Riverpod 2.x、 SQLite オフライン)</td></tr>
+    <tr><td><strong>Closed Testing</strong></td><td>2026 Q3 (Google Play 経由)</td></tr>
+    <tr><td><strong>正式リリース</strong></td><td>2026 Q4 予定</td></tr>
+    <tr><td><strong>最終 doc 更新</strong></td><td>2026-05-24</td></tr>
+  </tbody>
+</table>
+
+<!-- 最終 CTA (final action prompt) -->
+<h2>合格に向けた最初の 1 問を、 今日から</h2>
+<p style="text-align: center; margin: 22px 0;">
+  <a href="#features" style="display: inline-block; background: var(--accent); color: var(--bg); padding: 12px 28px; border-radius: 6px; font-weight: 600; text-decoration: none;">機能・無料版を確認 →</a>
+</p>
+<p style="text-align: center; color: var(--text-dim); font-size: 0.9rem;">
+  正式リリース 2026 Q4 予定。 Closed Testing 参加希望は X DM <a href="https://twitter.com/otsu4_study_lab" target="_blank" rel="noopener">@otsu4_study_lab</a> または email <a href="mailto:mk.madeinjapan@gmail.com">mk.madeinjapan@gmail.com</a> まで。
+</p>
+
+<!-- FOOTER (every-page disclosure for compliance) -->
+<footer>
+  <p>
+    <strong style="color: var(--accent);">本サイトは Amazon アソシエイト・プログラム参加者を兼ねています</strong>
+    <span class="pr-mark">(PR)</span> 景品表示法 (ステマ規制) 準拠
+  </p>
+  <p style="font-size: 0.85rem; margin-top: 4px;">乙4 学習ラボには Amazon アフィリエイトリンクはありません (試験対策アプリのため)。 開発者は同 brand で <a href="../edc-flashlight/index.html">EDC Lumen Log</a> も運営しており、 そちらでは Amazon リンクを使用しています。</p>
+  <div class="links-row">
+    <a href="../index.html">ポートフォリオ</a>
+    <a href="index.html">ホーム</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="mailto:mk.madeinjapan@gmail.com">Email</a>
+    <a href="https://twitter.com/otsu4_study_lab" target="_blank" rel="noopener">X</a>
+  </div>
+  <p>© 2026 乙4 学習ラボ, a project of <a href="../index.html">Masaki Made in Japan</a>. シンガポールの個人開発者が制作。 法令ベース・一次ソース突合済。 誇大広告ゼロ宣言。</p>
+  <p class="updated">最終更新: 2026-05-24</p>
+</footer>
+
+</body>
+</html>

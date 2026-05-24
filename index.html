@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Masaki Made in Japan — Indie Android apps that solve one problem well</title>
+<meta name="description" content="Indie Android apps by Masaki, a solo developer based in Singapore. Each app solves one problem well — no ad bloat, no analytics, no upsell traps. Currently building 乙4 学習ラボ (Japanese hazmat exam prep) and EDC Lumen Log (honest flashlight reviews), both targeting 2026 Q3 Closed Testing.">
+<style>
+  :root {
+    --bg: #0a0e1a;
+    --bg-card: #141a2e;
+    --bg-card-hover: #1c2440;
+    --text: #e2e8f0;
+    --text-dim: #94a3b8;
+    --accent: #fbbf24;
+    --accent-2: #06b6d4;
+    --border: #1e293b;
+    --footer-bg: #0d1320;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Segoe UI", "Helvetica Neue", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", Inter, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 32px 24px;
+    line-height: 1.7;
+  }
+  /* HERO (above-the-fold, single primary CTA) */
+  .hero {
+    text-align: center;
+    padding: 24px 0 32px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 32px;
+  }
+  .hero h1 {
+    color: var(--accent);
+    font-size: 2rem;
+    margin: 0 0 12px;
+    line-height: 1.3;
+  }
+  .hero .sub {
+    color: var(--text);
+    font-size: 1.05rem;
+    margin: 0 0 18px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero .identity {
+    color: var(--text-dim);
+    font-size: 0.92rem;
+    margin-bottom: 14px;
+  }
+  .hero .trust-row {
+    color: var(--text-dim);
+    font-size: 0.88rem;
+    margin-top: 18px;
+  }
+  .hero .trust-row span { margin: 0 8px; }
+  h2 {
+    color: var(--accent);
+    font-size: 1.4rem;
+    margin-top: 44px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 8px;
+  }
+  h3 { color: var(--accent); font-size: 1.1rem; margin-top: 24px; }
+  p, li { color: var(--text); margin-bottom: 10px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { margin-left: 24px; margin-bottom: 16px; }
+  code { background: var(--border); padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: var(--accent); }
+
+  /* APP GRID (Mubs 2-tier featured cards) */
+  .apps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+  }
+  .app-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px;
+    transition: background 0.15s, transform 0.15s, border-color 0.15s;
+    display: flex;
+    flex-direction: column;
+  }
+  .app-card:hover { background: var(--bg-card-hover); transform: translateY(-2px); border-color: var(--accent); }
+  .app-card.placeholder {
+    border-style: dashed;
+    opacity: 0.85;
+  }
+  .app-card .name-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 6px;
+  }
+  .app-card .app-name {
+    color: var(--accent);
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  .app-card .lang-badge {
+    background: var(--border);
+    color: var(--text-dim);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+  }
+  .app-card .app-benefit {
+    color: var(--text);
+    font-size: 0.95rem;
+    margin-bottom: 14px;
+    flex-grow: 1;
+  }
+  .app-card .app-meta {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    margin-bottom: 14px;
+  }
+  .app-card .status-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  .status-dev { background: #fb923c; color: #1a1a1a; }
+  .status-planning { background: #94a3b8; color: #1a1a1a; }
+  .app-card .primary-action {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--bg);
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-right: 8px;
+  }
+  .app-card .primary-action:hover { background: #fcd34d; }
+  .app-card .secondary-action {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    margin-left: 8px;
+  }
+
+  /* DEVELOPER BRIEF (StoryBrand "guide") */
+  .identity-block {
+    background: var(--bg-card);
+    border-left: 4px solid var(--accent);
+    padding: 18px 22px;
+    border-radius: 0 8px 8px 0;
+    margin: 20px 0;
+  }
+  .identity-block p { margin-bottom: 10px; }
+  .identity-block strong { color: var(--accent); }
+
+  /* TRUST SIGNALS */
+  .trust-list {
+    list-style: none;
+    margin-left: 0;
+    padding: 0;
+  }
+  .trust-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .trust-list li:last-child { border-bottom: none; }
+  .trust-list .check { color: #34d399; font-weight: 600; margin-right: 8px; }
+
+  /* AFFILIATE DISCLOSURE BLOCK (FTC + Japan ステマ規制 compliance) */
+  .disclosure-block {
+    background: var(--footer-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin: 20px 0;
+    font-size: 0.9rem;
+  }
+  .disclosure-block p { margin-bottom: 8px; color: var(--text-dim); }
+  .disclosure-block p:last-child { margin-bottom: 0; }
+  .disclosure-block strong { color: var(--accent); }
+  .disclosure-block .pr-mark {
+    color: var(--accent-2);
+    font-weight: 600;
+  }
+
+  /* FOOTER */
+  footer {
+    margin-top: 50px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    text-align: center;
+  }
+  footer a { color: var(--text-dim); text-decoration: underline; }
+  footer .links-row { margin: 10px 0; }
+  footer .links-row a { margin: 0 8px; }
+  footer .updated { color: var(--text-dim); font-size: 0.8rem; margin-top: 6px; }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 1.6rem; }
+    .apps-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO: benefit-led H1, single primary identity statement (NO multi-CTA) -->
+<section class="hero">
+  <h1>Apps built to solve one problem well.</h1>
+  <p class="sub">Indie Android apps with no ad bloat, no analytics, no upsell traps. Each app ships with a documented privacy policy and a real human behind it.</p>
+  <p class="identity">By <strong>Masaki</strong> — solo developer in Singapore, publishing as <strong>Masaki Made in Japan</strong> 🇯🇵🇸🇬</p>
+  <p class="trust-row">
+    <span>📱 2 active apps</span> ·
+    <span>🔒 Per-app privacy policy</span> ·
+    <span>🤖 AI-assisted, human-audited</span>
+  </p>
+</section>
+
+<!-- APPS GRID: Mubs 2-tier (featured first, archive later as it grows) -->
+<h2>Active apps</h2>
+
+<div class="apps-grid">
+
+  <article class="app-card">
+    <div class="name-row">
+      <span class="app-name">🔥 乙4 学習ラボ</span>
+      <span class="lang-badge">🇯🇵 JP</span>
+    </div>
+    <p class="app-benefit">
+      合格率を上げる乙4対策アプリ — 不正解の理由を法令根拠とともに解説します。
+      <em>(Japanese hazmat handler Class 4 exam prep, ~300,000 takers/year)</em>
+    </p>
+    <p class="app-meta">
+      <strong>Status</strong>: In development
+      <span class="status-badge status-dev">Closed Testing 2026 Q3</span>
+    </p>
+    <p class="app-meta">
+      Free + Pro ¥980 one-time · No subscriptions · AdMob in free only (disclosed)
+    </p>
+    <div>
+      <a href="otsu4-study-lab/index.html" class="primary-action">App details →</a>
+      <a href="otsu4-study-lab/privacy.html" class="secondary-action">Privacy</a>
+    </div>
+  </article>
+
+  <article class="app-card">
+    <div class="name-row">
+      <span class="app-name">🔦 EDC Lumen Log</span>
+      <span class="lang-badge">🇬🇧 EN + 🇯🇵 JP</span>
+    </div>
+    <p class="app-benefit">
+      Flashlight reviews from someone who actually carries one — not the affiliate link.
+      Side-by-side spec comparison, 4-axis ratings, no sponsored content.
+    </p>
+    <p class="app-meta">
+      <strong>Status</strong>: In development
+      <span class="status-badge status-dev">Closed Testing 2026 Q3</span>
+    </p>
+    <p class="app-meta">
+      Free + Premium ¥370 / S$3 one-time · No analytics<br>
+      Companion review website uses Amazon Affiliate (US/JP/SG); in-app affiliate is gated on separate Amazon Approved Mobile Application review post-launch.
+    </p>
+    <div>
+      <a href="edc-flashlight/index.html" class="primary-action">App details →</a>
+      <a href="edc-flashlight/reviews/" class="secondary-action">Reviews</a>
+      <a href="edc-flashlight/privacy.html" class="secondary-action">Privacy</a>
+    </div>
+  </article>
+
+  <article class="app-card placeholder">
+    <div class="name-row">
+      <span class="app-name">⏳ App #3</span>
+      <span class="lang-badge">TBD</span>
+    </div>
+    <p class="app-benefit">
+      Next focused tool in planning. Likely a small utility or family-oriented app.
+      Decision in Q3 2026 based on which problem I'm willing to live with for a year.
+    </p>
+    <p class="app-meta">
+      <strong>Status</strong>:
+      <span class="status-badge status-planning">Planning · Q4 2026</span>
+    </p>
+  </article>
+
+</div>
+
+<!-- DEVELOPER BRIEF (StoryBrand "guide" position) -->
+<h2>About the developer</h2>
+
+<div class="identity-block">
+  <p>
+    Hi, I'm <strong>Masaki</strong>. I'm a solo developer based in Singapore (Japanese
+    citizen, ~20 years in IT). I build small, focused Android apps under the brand
+    <strong>Masaki Made in Japan</strong>.
+  </p>
+  <p>
+    My approach: <strong>one app per real problem</strong>. When I couldn't find a 乙4 study app
+    that explained <em>why</em> wrong answers were wrong, I started building one. When I got tired
+    of "best flashlight 2026" lists optimizing for affiliate commission instead of actual carry
+    performance, I started writing my own reviews.
+  </p>
+  <p style="margin-bottom: 0;">
+    <strong>Email</strong>: <a href="mailto:mk.madeinjapan@gmail.com">mk.madeinjapan@gmail.com</a> (typical reply 1-3 business days) ·
+    <strong>GitHub</strong>: <a href="https://github.com/masakki55" target="_blank" rel="noopener">@masakki55</a> ·
+    <strong>Android publisher</strong>: <code>com.masakimadeinjapan.*</code>
+  </p>
+</div>
+
+<!-- TRUST SIGNALS -->
+<h2>How my apps are built</h2>
+
+<ul class="trust-list">
+  <li><span class="check">✓</span> <strong>Privacy first.</strong> Apps run offline-first. Zero analytics on you. Any third-party SDK used (e.g. AdMob in OTSU4 free) is disclosed in detail in that app's privacy policy.</li>
+  <li><span class="check">✓</span> <strong>No dark patterns.</strong> No forced sign-up. No subscription traps. One-time purchases only. Free versions are fully functional (with ads where applicable).</li>
+  <li><span class="check">✓</span> <strong>Sourced content.</strong> Every factual claim (review scores, exam answer keys, spec numbers) is sourced from primary references. Source URLs are visible inside each app.</li>
+  <li><span class="check">✓</span> <strong>AI-assisted, human-audited.</strong> App content is drafted with Claude AI (Anthropic), then audited by an independent third-party CLI tool (Codex by OpenAI) against the primary sources. This is disclosed in every app's privacy policy.</li>
+  <li><span class="check">✓</span> <strong>Honest affiliate disclosure.</strong> Amazon Associate participation is declared in every page footer below — and labeled <span class="pr-mark">(PR)</span> on Japanese-language pages per Japan's 景品表示法 stealth-marketing regulations.</li>
+</ul>
+
+<!-- AFFILIATE DISCLOSURE (FTC + ステマ規制 compliance, repeated also in footer) -->
+<div class="disclosure-block">
+  <p>
+    <strong>Affiliate disclosure (EN)</strong>: As an Amazon Associate I earn from qualifying purchases.
+    Some Buy links inside the EDC Lumen Log app and on its companion review pages are Amazon affiliate links
+    (Amazon.com / Amazon.co.jp / Amazon.sg). Reviews are not paid or sponsored by manufacturers.
+  </p>
+  <p lang="ja">
+    <strong>アフィリエイト表記 (JP)</strong>: 本サイトおよび EDC Lumen Log アプリは Amazon アソシエイト・プログラムの参加者です。
+    リンクから商品を購入された場合、 売上の一部が当サイトに還元されることがあります <span class="pr-mark">(PR)</span>。
+    景品表示法 (ステルスマーケティング規制、 2023 年 10 月施行) に基づく開示です。
+  </p>
+</div>
+
+<!-- FOOTER (repeated disclosure for every-page compliance) -->
+<footer>
+  <p>
+    <strong>As an Amazon Associate I earn from qualifying purchases.</strong>
+    <span lang="ja">本サイトは Amazon アソシエイト・プログラム参加者です <span class="pr-mark">(PR)</span></span>
+  </p>
+  <div class="links-row">
+    <a href="mailto:mk.madeinjapan@gmail.com">mk.madeinjapan@gmail.com</a> ·
+    <a href="https://github.com/masakki55" target="_blank" rel="noopener">GitHub @masakki55</a> ·
+    <a href="otsu4-study-lab/index.html">乙4 学習ラボ</a> ·
+    <a href="edc-flashlight/index.html">EDC Lumen Log</a>
+  </div>
+  <p>© 2026 Masaki Made in Japan · solo developer in Singapore</p>
+  <p class="updated">Last updated: 2026-05-24</p>
+</footer>
+
+</body>
+</html>

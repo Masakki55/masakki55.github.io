@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>プライバシーポリシー — 乙4 学習ラボ</title>
+<meta name="description" content="乙4 学習ラボ アプリのプライバシーポリシー。 無料版は Google AdMob 広告のため広告 ID / IP アドレス / ユーザーインタラクション を収集 + Google と共有 (Pro 版は SDK 自体不搭載)。 個人情報保護法 / GDPR / CCPA / PDPA 対応。">
+<style>
+  :root {
+    --bg: #0f1419;
+    --bg-card: #1e293b;
+    --text: #e2e8f0;
+    --text-dim: #94a3b8;
+    --accent: #fb923c;
+    --accent-2: #fbbf24;
+    --accent-3: #ef4444;
+  }
+  body {
+    font-family: -apple-system, "Hiragino Sans", "Yu Gothic UI", "Segoe UI", "Noto Sans JP", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 32px 24px;
+    line-height: 1.8;
+  }
+  nav {
+    background: var(--bg-card);
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 24px;
+    font-size: 0.92rem;
+  }
+  nav a { margin-right: 14px; color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  nav .portfolio-link { color: var(--text-dim); }
+  h1 { color: var(--accent); font-size: 1.7rem; margin-bottom: 8px; }
+  h2 { color: var(--accent); font-size: 1.25rem; margin-top: 32px; margin-bottom: 12px; border-bottom: 1px solid #2a3447; padding-bottom: 6px; }
+  h3 { color: var(--accent); font-size: 1.05rem; margin-top: 20px; }
+  p, li { color: var(--text); margin-bottom: 10px; }
+  a { color: var(--accent); }
+  ul, ol { margin-left: 24px; margin-bottom: 16px; }
+  code { background: var(--bg-card); padding: 2px 6px; border-radius: 3px; color: var(--accent-2); font-size: 0.9em; }
+  .effective {
+    background: var(--bg-card);
+    padding: 14px 18px;
+    border-radius: 6px;
+    border-left: 4px solid var(--accent);
+    margin: 14px 0;
+  }
+  .tldr {
+    background: var(--bg-card);
+    border-left: 4px solid var(--accent-2);
+    padding: 14px 20px;
+    border-radius: 0 6px 6px 0;
+    margin: 14px 0;
+  }
+  .tldr ul { margin-bottom: 0; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.92rem; }
+  th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid #2a3447; vertical-align: top; }
+  th { background: var(--bg-card); color: var(--accent); }
+  .warn-box {
+    background: var(--bg-card);
+    border-left: 4px solid var(--accent-3);
+    padding: 12px 18px;
+    border-radius: 0 6px 6px 0;
+    margin: 14px 0;
+  }
+  footer { margin-top: 50px; padding-top: 22px; border-top: 1px solid #2a3447; font-size: 0.85rem; color: var(--text-dim); }
+  footer .links-row { margin: 8px 0; }
+  footer .links-row a { color: var(--text-dim); margin-right: 12px; text-decoration: underline; }
+  footer .updated { font-size: 0.8rem; margin-top: 6px; }
+  footer .pr-mark { color: var(--accent-2); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="portfolio-link">← ポートフォリオ</a>
+  <a href="index.html">ホーム</a>
+  <a href="privacy.html"><strong>プライバシーポリシー</strong></a>
+  <a href="https://twitter.com/otsu4_study_lab" target="_blank" rel="noopener">X</a>
+</nav>
+
+<h1>🔒 プライバシーポリシー — 乙4 学習ラボ</h1>
+
+<div class="effective">
+  <strong>施行日</strong>: 2026-05-24<br>
+  <strong>最終更新</strong>: 2026-05-24<br>
+  <strong>アプリ</strong>: 乙4 学習ラボ (Android)<br>
+   ・ 無料版: <code>com.masakimadeinjapan.otsu4</code><br>
+   ・ Pro 版 (¥980 買い切り): <code>com.masakimadeinjapan.otsu4.pro</code><br>
+  <strong>運営者</strong>: Masaki (シンガポール在住の個人開発者、 ブランド <a href="../index.html">Masaki Made in Japan</a>)
+</div>
+
+<h2>要約 (TL;DR)</h2>
+<div class="tldr">
+<ul>
+  <li><strong>当アプリ運営者 (Masaki) は個人情報を一切収集しません。</strong></li>
+  <li>学習機能 (問題演習・解説・統計・復習) は<strong>すべて端末内で完結</strong>、 通信不要です。</li>
+  <li><strong>無料版は AdMob 広告</strong> を表示するため、 Google AdMob SDK が以下を <strong>Google に収集・共有</strong> します:
+    <ul>
+      <li>広告 ID (Advertising ID)</li>
+      <li>IP アドレス</li>
+      <li>ユーザーインタラクション (広告閲覧・タップ等の broad event signals)</li>
+    </ul>
+  </li>
+  <li><strong>Pro 版 (¥980 買い切り) は AdMob SDK 自体を含みません</strong> ⇒ 完全オフライン動作、 第三者データ送信ゼロ。</li>
+  <li>学習進捗・お気に入り問題・設定は <strong>あなたの端末内のみ</strong> に SQLite 保存。</li>
+</ul>
+</div>
+
+<h2>1. 運営者</h2>
+<p>
+  乙4 学習ラボ (「当アプリ」 「私たち」) は、 シンガポール在住の個人開発者 <strong>Masaki</strong> が提供する Android アプリです。 ブランド名: <strong>Masaki Made in Japan</strong> (Android publisher: <code>com.masakimadeinjapan.*</code>)。 Google Play Store で配信しています。
+</p>
+<p>
+  <strong>プライバシー関連・データ削除依頼・その他お問い合わせ</strong>:
+  <a href="mailto:mk.madeinjapan@gmail.com">mk.madeinjapan@gmail.com</a> (1-3 営業日以内に返信)
+</p>
+
+<h2>2. 当アプリ運営者 (Masaki) が収集 <strong>しない</strong> データ</h2>
+
+<p>明示的に、 <strong>当アプリ運営者は</strong> 以下を収集・送信しません:</p>
+<ul>
+  <li>氏名・メールアドレス・電話番号・住所・生年月日</li>
+  <li>使用状況分析 (Google Analytics・Firebase Analytics・Crashlytics は使用しません)</li>
+  <li>クラッシュレポート</li>
+  <li>位置情報</li>
+  <li>写真・連絡先・ファイル等の端末コンテンツ</li>
+  <li>音声・センサーデータ</li>
+</ul>
+
+<div class="warn-box">
+  <strong>★ 重要な区別</strong>: 上記は <strong>「当アプリ運営者 Masaki が収集しない」</strong> リストです。
+  ただし<strong>無料版では AdMob (Google) が SDK 経由で広告 ID / IP / ユーザーインタラクション を独自に収集・共有します</strong> (§4.1 参照)。 これらは Google による収集であり Masaki の手元にはデータは届きませんが、 Google Play Data Safety 上は「収集 + 共有」 として申告しています。
+</div>
+
+<h2>3. 端末内のみに保存されるデータ</h2>
+<p>以下は <strong>あなたの端末内 (アプリ専用 SQLite データベース)</strong> にのみ保存され、 端末外に送信されません:</p>
+<ul>
+  <li><strong>学習進捗</strong>: 各問題の正答 / 誤答履歴、 正答率、 直近 7 日推移</li>
+  <li><strong>お気に入り問題</strong>: 復習用にマークした問題 ID</li>
+  <li><strong>復習キュー</strong>: spaced repetition で次に出題する問題リスト</li>
+  <li><strong>設定</strong>: ダークモード / 通知設定 / Pro 版購入状態 / 広告除去 IAP 購入状態</li>
+</ul>
+<p>アプリのアンインストール または アプリ設定 → ストレージ → データ消去 で全データが削除されます。</p>
+
+<h2>4. 第三者サービス</h2>
+
+<h3 id="admob">4.1 Google AdMob (★ 無料版のみ)</h3>
+<p>
+  <strong>無料版 (<code>com.masakimadeinjapan.otsu4</code>)</strong> ではバナー広告 + 演習画面遷移時のインタースティシャル広告を表示します。 広告配信は <strong>Google AdMob</strong> が行います。 <strong>Google Mobile Ads SDK は以下 4 カテゴリのデータを SDK 動作時に自動的に Google に収集・共有します</strong> (Google 公式 Mobile Ads SDK Play disclosure ガイダンス準拠):
+</p>
+
+<table>
+  <thead>
+    <tr><th>データ種別</th><th>収集者</th><th>用途</th><th>Google Play Data Safety 申告</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>広告 ID (Advertising ID)</td>
+      <td>Google (AdMob SDK 経由)</td>
+      <td>広告のフリーケンシー制御 / 関連性最適化</td>
+      <td>収集 + 共有</td>
+    </tr>
+    <tr>
+      <td>IP アドレス</td>
+      <td>Google (AdMob SDK 経由)</td>
+      <td>地域別広告配信 / 不正クリック検出</td>
+      <td>収集 + 共有</td>
+    </tr>
+    <tr>
+      <td>ユーザーインタラクション</td>
+      <td>Google (AdMob SDK 経由)</td>
+      <td>広告閲覧・タップの broad event signals (個人特定なし)</td>
+      <td>収集 + 共有</td>
+    </tr>
+    <tr>
+      <td>診断データ (Crashes / Performance)</td>
+      <td>Google (AdMob SDK 経由)</td>
+      <td>SDK クラッシュ報告・パフォーマンス計測 (Google ポリシー上 自動収集)</td>
+      <td>収集 + 共有 (automatic、 Google Mobile Ads SDK Play disclosure 公式準拠)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  これらは <strong>Google による収集であり、 Masaki (当アプリ運営者) の手元にはデータは届きません</strong>。 ただし Google Play Data Safety 上は「収集 + 共有」 として正直に申告しています。 Google のプライバシーポリシーが適用されます:
+</p>
+<ul>
+  <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google プライバシーポリシー</a></li>
+  <li><a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google 広告ポリシー</a></li>
+  <li><a href="https://support.google.com/googleplay/android-developer/answer/6048248" target="_blank" rel="noopener">Google Play 広告 ID ポリシー</a></li>
+</ul>
+
+<p>
+  <strong>AdMob によるデータ収集・共有を完全に停止したい場合の選択肢</strong>:
+</p>
+<ul>
+  <li><strong>Pro 版</strong> (¥980 買い切り、 別パッケージ <code>com.masakimadeinjapan.otsu4.pro</code>) — AdMob SDK 自体を含まないため、 上記 <strong>4 カテゴリすべてが一切収集・共有されません</strong>。 ★ 完全停止を希望する場合は Pro 版を推奨します。</li>
+  <li><strong>広告除去 IAP</strong> (¥500 買い切り、 無料版から購入) — <strong>広告表示は停止しますが、 AdMob SDK 自体はアプリに残存します</strong>。 SDK 初期化処理 (アプリ起動時の SDK ロード) で診断データ等が Google に送信される可能性があります。 SDK レベルでのデータ送信を完全停止したい場合は Pro 版をご利用ください。</li>
+  <li>Android Settings → Google → 広告 ID をリセット / Opt out of Ads Personalization を有効化 で、 広告 ID をリセット・パーソナライズ停止可能 (Google アカウント設定)。 ただし IP / インタラクション / 診断 の送信は SDK が動作する以上停止できません — 完全停止には Pro 版が必要です。</li>
+</ul>
+
+<h3>4.2 Google Play 課金 (Premium 購入時)</h3>
+<p>
+  Pro 版 (¥980) または広告除去 IAP (¥500) の購入時、 取引は <strong>Google Play 課金システム</strong> (Google が直接運営) で処理されます。 <strong>支払いデータは Google が直接収集・処理し、 当アプリ運営者 (Masaki) は支払い方法・カード番号・請求先住所・氏名・その他の個人情報を一切受け取りません</strong>。 当アプリが Google から受け取るのは購入成功 / 失敗のバイナリ信号のみです。
+</p>
+<p>Google Play 課金のプライバシーポリシーが取引に適用されます: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google プライバシーポリシー</a></p>
+
+<h3>4.3 第三者サービスのまとめ</h3>
+<table>
+  <thead>
+    <tr><th>サービス</th><th>無料版</th><th>Pro 版</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Google AdMob (広告 ID / IP / インタラクション)</td><td>✅ 使用</td><td>❌ SDK 自体未搭載</td></tr>
+    <tr><td>Google Play 課金 (購入時のみ Google が処理)</td><td>✅ 使用</td><td>✅ 使用</td></tr>
+    <tr><td>Google Analytics / Firebase Analytics / Crashlytics</td><td>❌ 不使用</td><td>❌ 不使用</td></tr>
+    <tr><td>Facebook SDK / その他のトラッキング SDK</td><td>❌ 不使用</td><td>❌ 不使用</td></tr>
+  </tbody>
+</table>
+<p>将来のバージョンで Crashlytics 等を追加する場合は、 追加 <strong>前</strong> に本ポリシーを更新し、 「最終更新」 日を変更し、 Google Play release note で明示します。</p>
+
+<h2>5. 児童のプライバシー</h2>
+<p>
+  当アプリは一般向けレーティングで、 児童を対象としていません。 Masaki としては個人情報を一切収集しないため、 米国 COPPA、 EU GDPR-K、 シンガポール PDPA 児童保護コード (2023)、 日本 個人情報保護法 児童データ取扱 (改正法 17 条) に偶発的に準拠しています。
+</p>
+<p>
+  ただし<strong>無料版の AdMob</strong> は Google ポリシーに従い、 13 歳未満と判明したユーザーには適切な広告制御 (pers​onalized ads 無効化等) が Google 側で適用されます。 児童の保護者の方は、 完全に第三者データ送信のないPro 版 (¥980) のご利用を推奨します。
+</p>
+
+<h2>6. データ保持</h2>
+<p>
+  <strong>Masaki が保持する個人データはありません</strong> (Google AdMob / Google Play 課金が処理するデータは Google が保持、 Google のポリシーに従う)。
+  端末内のローカルデータ (学習進捗・設定) は、 アプリのアンインストール または アプリ設定 → ストレージ → データ消去 まで保持されます。
+</p>
+
+<h2>7. あなたの権利 (地域別適用)</h2>
+
+<h3>7.1 日本 (改正個人情報保護法 / APPI)</h3>
+<p>
+  Masaki としては個人情報を収集しないため、 個人情報保護法 (改正法含む) の主要規定 (利用目的の特定・第三者提供制限・開示請求への対応等) は、 <strong>Masaki が運営する範囲では</strong> 適用されません。 ただし、 無料版 AdMob 経由で Google が収集する広告 ID 等については、 <strong>Google が個人情報取扱事業者として APPI 義務を負います</strong>。 詳細は <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google プライバシーポリシー</a> を参照ください。
+</p>
+<p>Masaki への問い合わせ: <a href="mailto:mk.madeinjapan@gmail.com">mk.madeinjapan@gmail.com</a></p>
+
+<h3>7.2 EU / EEA / UK (GDPR / UK GDPR)</h3>
+<p>
+  GDPR の下、 アクセス・修正・削除・データポータビリティの権利があります。 Masaki としては個人データを収集しないため、 Masaki から提供・削除できるデータはありません。 端末内データはアプリ設定 → ストレージ → データ消去 で削除可能。 Google が AdMob 経由で収集するデータについては Google に対し権利行使を行ってください。
+</p>
+
+<h3>7.3 米国カリフォルニア州 (CCPA / CPRA)</h3>
+<p>
+  Masaki としては個人情報を販売・共有しません (収集自体しません)。 Google AdMob 経由のデータ取扱は Google のポリシーに従います。
+</p>
+
+<h3>7.4 シンガポール (PDPA 2012、 2020 改正)</h3>
+<p>
+  シンガポール個人情報保護法 (PDPA) を遵守します。 Masaki としては個人データを収集しないため、 Notification / Consent / Access/Correction の義務は当アプリの利用自体からは発生しません。 お問い合わせ: <a href="mailto:mk.madeinjapan@gmail.com">mk.madeinjapan@gmail.com</a>
+</p>
+
+<h2>8. ポリシー変更</h2>
+<p>
+  本ポリシーを変更する場合 (例: 解析サービス追加、 サブスク追加、 SDK 入れ替え等)、 ページ上部の「最終更新」 日を更新し、 Google Play のリリースノートで明示し、 重大な変更については次回起動時にアプリ内通知を表示します。 本ポリシーは利用中のバージョンに適用されます (旧バージョンは GitHub repository の git history で archive されています)。
+</p>
+
+<h2>9. AI による解説生成について</h2>
+<p>
+  当アプリの問題解説・引っかけ警告は、 <strong>Claude AI (Anthropic)</strong> で起草した後、 <strong>Codex CLI (OpenAI)</strong> による法令一次ソース突合監査を通過させたものです。 全ての法令引用・化学性質数値は、 e-Gov 法令検索・消防庁公式・規格省令 等の一次ソースを突合済です。 出典は問題ごとに「出典 タブ」 でご確認いただけます。 「鉄板」 「絶対出る」 等の一次ソース突合なき確信表現は禁止しています。
+</p>
+
+<h2>10. アフィリエイトリンクについて</h2>
+<p>
+  <strong>当アプリ (乙4 学習ラボ) には Amazon アフィリエイトリンクは含まれません</strong> (試験対策アプリのため)。
+  ただし、 開発者 Masaki は同 brand (Masaki Made in Japan) で <a href="../edc-flashlight/index.html">EDC Lumen Log</a> も運営しており、 そちらでは Amazon アソシエイト・プログラムに参加しています <span class="pr-mark">(PR、 景品表示法 ステマ規制準拠)</span>。 ポートフォリオ全体のアフィリエイト方針は <a href="../index.html">ポートフォリオ top</a> で記載しています。
+</p>
+
+<h2>11. お問い合わせ</h2>
+<p>プライバシーに関する懸念・データ削除依頼・本ポリシーに関するご質問:</p>
+<ul>
+  <li><strong>Email</strong>: <a href="mailto:mk.madeinjapan@gmail.com">mk.madeinjapan@gmail.com</a> (推奨、 1-3 営業日以内に返信)</li>
+  <li><strong>X / Twitter</strong>: <a href="https://twitter.com/otsu4_study_lab" target="_blank" rel="noopener">@otsu4_study_lab</a> (DM 開放)</li>
+</ul>
+
+<p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 20px;">
+  本ポリシーは法的助言ではなく、 開発者 (Masaki) が作成した運営方針です。 特定の地域の法的解釈については弁護士にご相談ください。
+</p>
+
+<footer>
+  <p>
+    <strong style="color: var(--accent);">乙4 学習ラボ は本サイトおよびアプリ内に Amazon アフィリエイトリンクを含みません</strong>
+    (同 brand の EDC Lumen Log には含まれます <span class="pr-mark">(PR)</span>)
+  </p>
+  <div class="links-row">
+    <a href="../index.html">ポートフォリオ</a>
+    <a href="index.html">ホーム</a>
+    <a href="mailto:mk.madeinjapan@gmail.com">Email</a>
+    <a href="https://twitter.com/otsu4_study_lab" target="_blank" rel="noopener">X</a>
+  </div>
+  <p>© 2026 乙4 学習ラボ, a project of <a href="../index.html">Masaki Made in Japan</a>. 本プライバシーポリシーは 2026-05-24 に最終更新されました。</p>
+  <p class="updated">最終更新: 2026-05-24</p>
+</footer>
+
+</body>
+</html>

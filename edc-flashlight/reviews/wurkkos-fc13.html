@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wurkkos FC13 Review — Anduril 2 + Reverse Charging Budget Value | EDC Lumen Log</title>
+<meta name="description" content="Wurkkos FC13 flashlight review — community-synthesis verdict on the 18650 Anduril 2 budget light with reverse charging power-bank function. XHP50B vs SFT40 variants compared. Multi-region Amazon buy links.">
+<style>
+  /* EDC Lumen Log — Palette B (Warm Cream Light) + Typography v1.0 (Major Third 1.25 scale) */
+  :root {
+    --bg: #fefce8;
+    --text: #1c1917;
+    --text-dim: #78716c;
+    --accent: #b45309;
+    --accent-2: #fbbf24;
+    --accent-orange: #f97316;
+    --border: #d6d3d1;
+    --card-bg: #fff7ed;
+    --card-bg-2: #fffbeb;
+    --pure-card: #ffffff;
+    --hover: #fef3c7;
+    --good: #16a34a;
+    --highlight-yellow: #fef08a;
+  }
+  body { font-family: -apple-system, "Segoe UI", "Helvetica Neue", Inter, sans-serif; background: var(--bg); color: var(--text); max-width: 800px; margin: 0 auto; padding: 32px 24px; font-size: 20px; line-height: 1.7; }
+  nav { background: var(--card-bg); padding: 12px 16px; border-radius: 6px; margin-bottom: 24px; font-size: 0.85rem; border: 1px solid var(--border); }
+  nav a { margin-right: 14px; color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  nav .portfolio-link { color: var(--text-dim); }
+  h1 { color: var(--text); font-size: 3rem; margin: 16px 0 12px; line-height: 1.15; font-weight: 800; letter-spacing: -0.01em; }
+  .one-liner { color: var(--accent); font-size: 1.4rem; font-style: italic; margin-bottom: 24px; line-height: 1.4; }
+  h2 { color: var(--text); font-size: 2rem; margin-top: 48px; margin-bottom: 16px; border-bottom: 3px solid var(--accent-2); padding-bottom: 8px; line-height: 1.2; font-weight: 800; }
+  h3 { color: var(--text); font-size: 1.5rem; margin-top: 28px; font-weight: 700; }
+  @media (max-width: 768px) {
+    body { font-size: 18px; padding: 20px 16px; }
+    h1 { font-size: 2rem; }
+    .one-liner { font-size: 1.15rem; }
+    h2 { font-size: 1.5rem; margin-top: 32px; }
+    h3 { font-size: 1.25rem; }
+  }
+  p, li { color: var(--text); margin-bottom: 10px; }
+  a { color: var(--accent); }
+  a:hover { background: var(--hover); }
+  ul, ol { margin-left: 24px; margin-bottom: 16px; }
+  code { background: var(--card-bg); padding: 2px 6px; border-radius: 3px; color: var(--text); font-size: 0.9em; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.92rem; }
+  th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { background: var(--card-bg); color: var(--text); font-weight: 700; }
+  tr:nth-child(even) td { background: var(--card-bg-2); }
+  .disclosure-inline { background: var(--card-bg); border-left: 4px solid var(--accent-2); padding: 10px 16px; border-radius: 0 6px 6px 0; margin: 16px 0; font-size: 0.88rem; color: var(--text); }
+  .disclosure-inline strong { color: var(--accent); }
+  .tldr { background: var(--card-bg-2); border-left: 4px solid var(--accent); padding: 14px 20px; border-radius: 0 6px 6px 0; margin: 16px 0; }
+  .tldr h3 { margin-top: 0; color: var(--accent); }
+  .tldr ul { margin-bottom: 0; }
+  .rating-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin: 16px 0; }
+  .rating-card { background: var(--pure-card); border: 1px solid var(--border); border-radius: 8px; padding: 14px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  .rating-card .axis { color: var(--accent); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  .rating-card .score { color: var(--accent-orange); font-size: 3.25rem; font-weight: 800; margin: 6px 0; line-height: 1; letter-spacing: -0.02em; }
+  .rating-card .reason { color: var(--text-dim); font-size: 0.85rem; line-height: 1.45; }
+  .key-line { background: var(--highlight-yellow); padding: 2px 6px; font-weight: 600; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  .pull-quote { font-size: 1.5rem; font-style: italic; line-height: 1.4; margin: 36px 8px 36px 24px; padding: 8px 0 8px 24px; border-left: 4px solid var(--accent-2); color: var(--text); font-weight: 500; }
+  .reading-time { display: inline-block; font-size: 0.85rem; color: var(--text-dim); padding: 4px 10px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 4px; margin-right: 8px; }
+  .review-hero { width: 100%; max-width: 800px; height: auto; border-radius: 10px; border: 1px solid var(--border); margin: 18px 0 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); background: var(--card-bg); }
+  .review-figure { margin: 22px 0; text-align: center; }
+  .review-figure img { max-width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border); }
+  .review-figure figcaption { font-size: 0.85rem; color: var(--text-dim); margin-top: 8px; font-style: italic; line-height: 1.5; }
+  .review-figure figcaption a { color: var(--text-dim); text-decoration: underline; }
+  .pros-cons { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin: 14px 0; }
+  .pros, .cons { background: var(--pure-card); border-radius: 8px; padding: 16px 20px; border: 1px solid var(--border); }
+  .pros { border-left: 4px solid var(--good); }
+  .cons { border-left: 4px solid var(--accent-orange); }
+  .pros h3, .cons h3 { margin-top: 0; }
+  .pros h3 { color: var(--good); }
+  .cons h3 { color: var(--accent-orange); }
+  .pros ul, .cons ul { margin-bottom: 0; }
+  .carry-report { background: var(--card-bg); border: 1px dashed var(--accent); border-radius: 8px; padding: 18px 22px; margin: 20px 0; }
+  .carry-report h3 { margin-top: 0; color: var(--accent); }
+  .carry-report .label { color: var(--accent-orange); font-weight: 600; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; display: block; }
+  .verdict-box { background: var(--card-bg-2); border-left: 4px solid var(--accent-2); padding: 16px 22px; border-radius: 0 6px 6px 0; margin: 18px 0; font-style: italic; }
+  .buy-block { background: var(--card-bg); border: 2px solid var(--accent-2); border-radius: 10px; padding: 22px 26px; margin: 24px 0; }
+  .buy-block h2 { border: none; margin-top: 0; color: var(--accent); }
+  .buy-block .pre-buy { color: var(--text); font-style: italic; margin-bottom: 14px; }
+  .buy-block .region-links { list-style: none; margin-left: 0; padding: 0; }
+  .buy-block .region-links li { padding: 8px 0; border-bottom: 1px solid var(--border); }
+  .buy-block .region-links li:last-child { border-bottom: none; }
+  .buy-block .region-links a { font-weight: 600; color: var(--accent); text-decoration: none; border-bottom: 1px dashed var(--accent); }
+  .buy-block .region-links a:hover { color: var(--accent-orange); background: var(--hover); }
+  .buy-block .affiliate-marker { color: var(--text-dim); font-size: 0.82rem; margin-left: 8px; }
+  .buy-block .disclosure { color: var(--text-dim); font-size: 0.85rem; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); }
+  .sources { background: var(--card-bg); border-radius: 8px; padding: 14px 18px; margin: 16px 0; font-size: 0.9rem; border: 1px solid var(--border); }
+  .sources h3 { margin-top: 0; color: var(--accent); }
+  .sources ul { margin-bottom: 0; font-size: 0.88rem; }
+  footer { margin-top: 50px; padding-top: 22px; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--text-dim); }
+  footer .links-row { margin: 8px 0; }
+  footer .links-row a { color: var(--text-dim); margin-right: 12px; text-decoration: underline; }
+  footer .updated { font-size: 0.8rem; margin-top: 6px; }
+  footer .pr-mark { color: var(--accent-orange); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../../index.html" class="portfolio-link">← Portfolio</a>
+  <a href="../index.html">EDC home</a>
+  <a href="../about.html">Methodology</a>
+  <a href="index.html">All reviews</a>
+  <a href="../privacy.html">Privacy</a>
+</nav>
+
+<p style="color: var(--text-dim); font-size: 0.88rem; margin-bottom: 4px;">
+  <span class="reading-time">⏱ 8 min read</span>
+  Wurkkos · 18650 EDC · Reviewed: 2026-05-24
+</p>
+<h1>Wurkkos FC13 Review — Anduril 2 in an 18650 With a Power Bank Built In</h1>
+<p class="one-liner">A budget-tier 18650 that quietly stole feature ground from premium-tier EDC lights — community-synthesis verdict after years of BLF and r/flashlight discussion.</p>
+
+<!-- Hero photo (manufacturer composite via Wurkkos official FC13 page) -->
+<img src="imgs/wurkkos-fc13-hero.webp"
+     alt="Wurkkos FC13 product composite hero photo — 18650 EDC flashlight with RGB multicolor aux switch backlight (8 color samples shown), USB-C charging cable, and phone showing reverse charging in action"
+     class="review-hero"
+     width="967" height="1000"
+     fetchpriority="high">
+<p style="font-size: 0.82rem; color: var(--text-dim); font-style: italic; margin: 4px 0 24px; text-align: center;">
+  Image: Wurkkos FC13 manufacturer product composite via <a href="https://wurkkos.com/products/fc13" target="_blank" rel="noopener" style="color: var(--text-dim);">Wurkkos official FC13 product page</a> (manufacturer CDN, downloaded for local hosting). Cropped/sized for review use under fair-use review/commentary.
+</p>
+
+<div class="disclosure-inline">
+  <strong>Affiliate disclosure</strong>: As an Amazon Associate I earn from qualifying purchases. The Buy links at the bottom of this review are Amazon product links — once the Amazon Associates application for this site is approved, an affiliate tag will be inserted into each link. This review is not sponsored.
+</div>
+
+<div class="tldr">
+  <h3>TL;DR</h3>
+  <ul>
+    <li><strong>Verdict</strong>: The FC13 is the community's pick for "most features per dollar in an 18650 Anduril 2 light." Reverse charging (power-bank function), RGB aux LED, USB-C, and included clip at a budget price point that BLF members consistently flag as <span class="key-line">punching above its tier</span>.</li>
+    <li><strong>Best for</strong>: Anduril 2 entry-level buyers who want every feature in one package — the FC13 isn't the best at any single thing, but it's <span class="key-line">surprisingly good at all of them</span>.</li>
+    <li><strong>Skip if</strong>: You want high-CRI tint (no current FC13 variant exceeds ~70 CRI — the "90 CRI variant" doesn't exist for this light, despite some catalog confusion with the FC11 sibling), or you need sustained turbo output for more than ~2 minutes.</li>
+    <li><strong>What you need to buy together</strong>: The FC13 ships with a Wurkkos 18650 cell included — adequate for casual use. For the XHP50B variant on turbo, a Samsung 30Q or LG HG2 unlocks measurably more output (see "Where to buy" at the bottom).</li>
+  </ul>
+</div>
+
+<!-- Spec comparison chart -->
+<figure class="review-figure">
+  <img src="imgs/wurkkos-fc13-spec-chart.png"
+       alt="Spec comparison chart: Wurkkos FC13 vs Sofirn SC31 Pro vs Sofirn IF25A — claimed peak lumens, measured at 30s, cell type, IP rating, weight, UI, charging, reverse charging, CRI, pocket clip"
+       width="1080" height="980"
+       loading="lazy">
+  <figcaption>
+    <strong>Site-generated infographic (HTML→PNG, EDC Lumen Log original).</strong> Side-by-side spec comparison: where the FC13 fits relative to its closest 18650 community competitors (SC31 Pro) and the next-tier-up 21700 IF25A. The FC13's defining differentiator at this price is the reverse-charging power-bank function — neither Sofirn light offers it. Spec data sources: Wurkkos manufacturer page + ZeroAir + LiquidRetro + BLF community measurements (2026-05). Chart layout and composition © 2026 EDC Lumen Log.
+  </figcaption>
+</figure>
+
+<!-- Specs -->
+<h2>Specs (XHP50B variant)</h2>
+<table>
+  <thead>
+    <tr><th>Spec</th><th>Claimed (Wurkkos)</th><th>Notes</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Max output</td><td>3500 lm</td><td>ZeroAir measured ~3800 lm at start; significant thermal stepdown within 1-2 minutes. Sustained output well below turbo.</td></tr>
+    <tr><td>Peak candela</td><td>11,500 cd</td><td>Throw ~214 m (XHP50B). The SFT40 variant trades flood for ~360 m throw at lower 2000 lm output.</td></tr>
+    <tr><td>Battery</td><td>1× 18650 (standard, button-top)</td><td>Cell <em>included</em> (Wurkkos 3000 mAh). Standard 18650 — accepts Samsung 30Q, Sony VTC6, LG HG2, Molicel P26A. Do <strong>NOT</strong> use 21700 cells (won't fit; the FC13 is 18650-only, unlike its larger Sofirn IF25A neighbor).</td></tr>
+    <tr><td>IP rating</td><td>IP68</td><td>Rated to 2 m submersion. Higher rating than IPX8 lights (IP68 tests dust ingress + water; IPX8 is water-only).</td></tr>
+    <tr><td>Weight</td><td>77 g (without cell)</td><td>~125 g with cell installed. Lighter than the IF25A (~170 g with 21700) but slightly heavier than the SC31 Pro (~110 g with cell).</td></tr>
+    <tr><td>Length × diameter</td><td>113.7 mm × 29 mm head</td><td>The 29 mm head is the largest of the budget 18650 trio — limits sustained thermal capacity vs. the 25 mm SC31 Pro head.</td></tr>
+    <tr><td>Charging</td><td>USB-C, built-in</td><td>5V/2.4A input. ~2.5-3 hours to full from empty.</td></tr>
+    <tr><td>Reverse charging</td><td><strong>Yes</strong> — functions as USB power bank</td><td>Output under 2 A recommended. The defining FC13 feature most other 18650 lights don't offer at this price.</td></tr>
+    <tr><td>UI</td><td>Anduril 2.0</td><td>Same UI family as Sofirn IF25A, SC31 Pro, Emisar D4V2. Steep learning curve, extremely customizable.</td></tr>
+    <tr><td>Aux LED</td><td>RGB multicolor switch backlight</td><td>Configurable. <span class="key-line">High setting drains the cell in under 30 days</span> — community advice is universal: set it to dim or off immediately after first boot.</td></tr>
+    <tr><td>CRI</td><td>~70 (all current SKUs)</td><td>No high-CRI variant currently produced. The discontinued SFN43 measured ~73 CRI at 7200K. If you need high-CRI, look at the Sofirn IF25A 4000K/95 CRI option instead.</td></tr>
+    <tr><td>Price</td><td>Check current price at the regional Amazon links in the "Where to buy" section below</td><td>Per Amazon Associates Program policy, on-site pricing is sourced via Amazon's PA-API only — static prices are not displayed here.</td></tr>
+  </tbody>
+</table>
+
+<!-- USB-C + reverse charging feature detail (manufacturer marketing photo) -->
+<figure class="review-figure">
+  <img src="imgs/wurkkos-fc13-hero-002.webp"
+       alt="Wurkkos FC13 USB-C fast charge detail: light shown plugged into power bank + wall outlet, with orange status indicator close-ups showing 'Orange Flashlight light charging' and 'Orange Light fully charged' states"
+       width="1000" height="1000"
+       loading="lazy">
+  <figcaption>
+    Image: Wurkkos FC13 USB-C fast-charge + reverse-charging feature detail via <a href="https://wurkkos.com/products/fc13" target="_blank" rel="noopener">Wurkkos official FC13 product page</a>. Cropped/sized for review use under fair-use review/commentary.
+  </figcaption>
+</figure>
+
+<!-- Size in-hand reference (manufacturer marketing photo) -->
+<figure class="review-figure">
+  <img src="imgs/wurkkos-fc13-hero-004.webp"
+       alt="Wurkkos FC13 size reference photo: light held in a gloved hand against black background, with explicit dimensions overlay — 1.14 inch head diameter and 4.45 inch overall length"
+       width="1000" height="1000"
+       loading="lazy">
+  <figcaption>
+    Image: Wurkkos FC13 size reference (1.14 in head × 4.45 in length, gloved-hand scale) via <a href="https://wurkkos.com/products/fc13" target="_blank" rel="noopener">Wurkkos official FC13 product page</a>. Cropped/sized for review use under fair-use review/commentary.
+  </figcaption>
+</figure>
+
+<!-- Cell sourcing infographic (reuse IF25A's — explains 18650 + Ultrafire warning) -->
+<figure class="review-figure">
+  <img src="imgs/sofirn-if25a-cell-compat.png"
+       alt="EDC flashlight cell compatibility guide: 18650 cells (Samsung 30Q, Sony VTC6, Molicel P26A) for FC13, 21700 alternatives explained for comparison, and DO NOT BUY warning for 9800 mAh / Ultrafire counterfeit cells"
+       width="1080" height="1115"
+       loading="lazy">
+  <figcaption>
+    <strong>Site-generated infographic (HTML→PNG, EDC Lumen Log original; shared cell-compat reference reused from the IF25A review for cross-link consistency).</strong> Cell sourcing reference — the FC13 takes <strong>18650 only</strong> (button-top or flat-top both work; XHP50B turbo pulls ~20 A peak, so high-drain cells are recommended). Do not confuse with 21700 lights like the Sofirn IF25A or Olight Baton 3 Pro Max. Avoid 9800 mAh / Ultrafire counterfeits — Li-ion chemistry caps 18650 capacity at ~3500 mAh. Cell-spec data sources: manufacturer datasheets (Samsung, Sony, Molicel) cross-referenced with Battery Mooch / BLF community testing.
+  </figcaption>
+</figure>
+
+<!-- 4-axis rating -->
+<h2>4-axis rating</h2>
+<div class="rating-grid">
+  <div class="rating-card">
+    <div class="axis">Build</div>
+    <div class="score">4/5</div>
+    <div class="reason">Type-III hard anodized 6061 aluminum, clean threading, no machining defects across community reports. Gift-box packaging punches above the price tier. Minor knurling sharpness.</div>
+  </div>
+  <div class="rating-card">
+    <div class="axis">Runtime</div>
+    <div class="score">3/5</div>
+    <div class="reason">Turbo is real, then aggressively brief (~1-2 minutes before stepdown). Sustained High ~500-700 lm is solid for an 18650. RGB aux LED on default high steals a cell in 30 days — configure it down before first use.</div>
+  </div>
+  <div class="rating-card">
+    <div class="axis">Pocketability</div>
+    <div class="score">4/5</div>
+    <div class="reason">~125 g with cell, included reversible clip works well, 29 mm head is on the wider side but still pocket-friendly. The SC31 Pro is slightly slimmer; the FC13 trades that for the reverse-charging feature.</div>
+  </div>
+  <div class="rating-card">
+    <div class="axis">Value</div>
+    <div class="score">5/5</div>
+    <div class="reason">Anduril 2 + USB-C + reverse charging + RGB aux + IP68 + included cell at the budget tier is the densest feature-per-dollar offering in the 18650 EDC segment in 2026.</div>
+  </div>
+</div>
+<p style="font-size: 0.9rem; color: var(--text-dim);">Methodology: see <a href="../about.html">how these scores are assigned</a>.</p>
+
+<!-- Where it shines / Where it falls short -->
+<h2>Where it shines / Where it falls short</h2>
+<div class="pros-cons">
+  <div class="pros">
+    <h3>✓ Where it shines</h3>
+    <ul>
+      <li><strong>Reverse charging is genuinely useful</strong>: Community consensus is that the power-bank function works as advertised under 2 A output. For trail, travel, or emergency-bag carry, this turns the light into a backup phone-topup device. No other budget 18650 light at this price tier offers it.</li>
+      <li><strong>Anduril 2 + RGB aux + USB-C package density</strong>: Multiple BLF reviews flag this combination as the FC13's defining advantage. You're getting the full Anduril 2 feature set (ramping, stepped modes, lockout, configurable floor/ceiling, sunset mode, battery check) in a single budget-tier purchase.</li>
+      <li><strong>SFT40 variant throws 360 m from a single 18650</strong>: Most buyers default to the XHP50B because "3500 lumens" sounds bigger, but the SFT40 trades flood for genuine outdoor-relevant throw at the same price. Underserved in YouTube reviews.</li>
+      <li><strong>Build quality consistently surprises</strong>: ZeroAir summarized it well — "From excellent fit and finish, to the presentation/gift box it comes in... it's a tough act to follow." That's a budget-tier review describing a budget-tier light.</li>
+    </ul>
+  </div>
+  <div class="cons">
+    <h3>✗ Where it falls short</h3>
+    <ul>
+      <li><strong>Turbo thermal stepdown is brief and physics-bound</strong>: 29 mm head on an 18650 body cannot dissipate 3500 lm for long. Sustained high-output users will be disappointed. This is not a defect — it's a hardware constraint that affects every small-head high-lumen 18650 light. The FC13 is a burst-light, not a sustained-output light.</li>
+      <li><strong>RGB aux LED drains the cell rapidly on default high</strong>: Configuration trap that catches new owners. The aux LED's bright setting can deplete a 3000 mAh cell in under 30 days. Universal community advice: set it to dim or off immediately. Not a defect, but worth knowing before you pocket it.</li>
+      <li><strong>Anduril 2 learning curve is steep for non-enthusiasts</strong>: 8 deep modes, unlock from lockout, configurable floor/ceiling — gifting this to someone unfamiliar with Anduril leads to fumbling. The Olight Baton 3 Pro's simple UI is the alternative for that buyer.</li>
+      <li><strong>No high-CRI option (despite some catalog confusion)</strong>: The current FC13 lineup (XHP50B, SFT40) caps at ~70 CRI. The discontinued SFN43 was 73 CRI. If your app or affiliate site lists a "90 CRI FC13 variant," that's a data error — it doesn't exist. The sibling FC11 (not FC13) has the high-CRI option.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Pull quote -->
+<blockquote class="pull-quote">
+  "The FC13's actual case is feature density — Anduril 2 plus reverse charging plus RGB aux plus USB-C plus included cell at the budget tier is the densest 18650 package the community has seen at this price point in 2026."
+</blockquote>
+
+<!-- Marketing claim shot (SFT40 variant — claim vs reality framing) -->
+<figure class="review-figure">
+  <img src="imgs/wurkkos-fc13-hero-003.webp"
+       alt="Wurkkos FC13 SFT40 variant marketing beam shot: hiker silhouette in dark forest with bright beam, manufacturer overlay text '2050 Lumen Super Bright LED Flashlight - 6 Light Modus' and SFT40 LED close-up callout"
+       width="1000" height="1000"
+       loading="lazy">
+  <figcaption>
+    Image: Wurkkos FC13 <strong>SFT40 throw-biased variant</strong> beam-shot marketing graphic ("2050 Lumen Super Bright LED Flashlight, 6 Light Modus") via <a href="https://wurkkos.com/products/fc13" target="_blank" rel="noopener">Wurkkos official FC13 product page</a>. Cropped/sized for review use under fair-use review/commentary.
+  </figcaption>
+</figure>
+
+<!-- Community-tracked use report -->
+<div class="carry-report">
+  <span class="label">★ Community-tracked use report</span>
+  <h3>📅 Long-term FC13 patterns from BLF, ZeroAir, and Amazon reviews</h3>
+  <ul>
+    <li><strong>Pocket placement</strong>: Community reports consistently describe the FC13 in jeans front pocket carry with the included clip. The 29 mm head is on the wider side but doesn't bulge through fabric for most pant cuts. Jacket and bag pockets are also common.</li>
+    <li><strong>Anodizing wear</strong>: BLF long-term threads document moderate clip-contact wear after months of use — typical for budget-tier hard anodizing. No widespread reports of premature anodizing failure or thread stripping.</li>
+    <li><strong>Cell behavior</strong>: The included Wurkkos 18650 is adequate for casual use. Community testing on Samsung 30Q or LG HG2 shows measurably higher peak output on the XHP50B variant (the driver pulls ~20 A at turbo, so high-drain cells unlock more burst). The SFT40 variant draws ~12 A — moderate-drain cells are sufficient.</li>
+    <li><strong>Charging port</strong>: USB-C rubber flap stays seated reliably across hundreds of charge cycles per community reports. No widespread port degradation issues.</li>
+    <li><strong>Documented edge-case issues</strong>: One BLF thread reports turbo-mode crashes on a small subset of units (cell-voltage + driver interaction); another documents specific phone/cable combinations causing mode confusion when used as a power bank. Community considers these edge cases, not widespread; Wurkkos support has been responsive on warranty claims.</li>
+    <li><strong>Compared to SC31 Pro</strong>: Community consensus is that the SC31 Pro wins on pure pocket-EDC minimalism (slimmer body, no RGB to configure); the FC13 wins on feature density (reverse charging, RGB aux). Many enthusiasts own both. For pure-utility EDC, SC31 Pro. For "all features in one light," FC13.</li>
+  </ul>
+</div>
+
+<!-- Verdict -->
+<h2>Verdict</h2>
+<div class="verdict-box">
+  The Wurkkos FC13 is the budget 18650 EDC light that doesn't try to win any single category — it wins on package density. Anduril 2, USB-C onboard charging, reverse charging power-bank function, RGB aux LED, included cell, and IP68 sealing in a budget-tier light is a feature combination no competitor matches at this price tier in 2026. If you want every feature in one purchase, this is the light. If you want pure pocket-EDC minimalism, get the SC31 Pro instead. If you want sustained turbo output, get the 21700 IF25A. If you want high-CRI tint, look at the IF25A 4000K/95 CRI variant — the FC13 doesn't offer that option.
+</div>
+
+<!-- BUY BLOCK -->
+<div class="buy-block">
+  <h2>🛒 Where to buy</h2>
+  <p class="pre-buy">If the verdict resonated and you want to pick one up, here are the regional Amazon product links. Choose your region. Once the Amazon Associates application for this site is approved, the URLs will be updated to include an affiliate tag.</p>
+
+  <ul class="region-links">
+    <li>
+      🇺🇸 <a href="https://www.amazon.com/dp/B0BRHXLHYG" target="_blank" rel="noopener">Check current price on Amazon.com (US)</a>
+      <span class="affiliate-marker">(Amazon product link — affiliate tag pending approval)</span>
+      <br>
+      <span style="color: var(--text-dim); font-size: 0.85rem;">Cell (18650) included. Variants: XHP50B (5000K or 6000K, 3500 lm) or SFT40 (6000K, 2000 lm thrower).</span>
+    </li>
+    <li>
+      🇯🇵 <a href="https://www.amazon.co.jp/dp/B0BRHXLHYG" target="_blank" rel="noopener">Check current price on Amazon.co.jp (JP)</a>
+      <span class="affiliate-marker">(Amazon 商品リンク — アフィリエイトタグは承認待ち / PR 適用予定)</span>
+      <br>
+      <span style="color: var(--text-dim); font-size: 0.85rem;">セル (18650) 同梱、 バリアント: XHP50B (フラッド) または SFT40 (スロー型)</span>
+    </li>
+    <li>
+      🇸🇬 <a href="https://www.amazon.sg/s?k=Wurkkos+FC13" target="_blank" rel="noopener">Check current price on Amazon.sg (SG)</a>
+      <span class="affiliate-marker">(Amazon search link — affiliate tag pending approval)</span>
+      <br>
+      <span style="color: var(--text-dim); font-size: 0.85rem;">Cell (18650) included. Direct from Wurkkos: <a href="https://wurkkos.com/products/fc13" target="_blank" rel="noopener">wurkkos.com/products/fc13</a></span>
+    </li>
+  </ul>
+
+  <p style="font-size: 0.88rem; color: var(--text-dim); margin-top: 14px;">
+    <strong>Upgrade 18650 cells (optional, for XHP50B turbo)</strong>: Samsung 30Q (3000 mAh, 15 A), LG HG2 (3000 mAh, 20 A), Sony VTC6 (3000 mAh, 30 A peak), Molicel P26A (2600 mAh, 35 A). The included Wurkkos cell is fine; high-drain alternatives unlock measurably more turbo output on the XHP50B variant. <strong>Do NOT use 21700 cells</strong> — physically won't fit. <strong>Avoid uncategorized "9800 mAh" cells</strong> — see the <a href="ultrafire-9800mah-warning.html">Ultrafire warning post</a>.
+  </p>
+
+  <p style="font-size: 0.88rem; color: var(--text-dim); margin-top: 8px;">
+    <strong>Where I personally source 18650 cells</strong>: <a href="https://illumn.com" target="_blank" rel="noopener">Illumn</a> (not an affiliate link — the most reliable EDC battery vendor I've found across years of community sourcing discussions).
+  </p>
+
+  <p class="disclosure">
+    <strong>Affiliate disclosure</strong>: The Amazon links above are currently non-affiliate product links. Once the Amazon Associates application for this site is approved, an affiliate tag will be inserted into each link. If/when you buy through an affiliate-tagged link, EDC Lumen Log earns a small commission at no extra cost to you. As an Amazon Associate I earn from qualifying purchases (statement preserved as required by Amazon Program Policies for the participation framework). Reviews are not paid or sponsored — see <a href="../about.html">Methodology</a>. <span class="pr-mark">(PR — 景品表示法準拠 / アフィリエイトタグは承認後に挿入)</span>
+  </p>
+</div>
+
+<!-- Sources -->
+<div class="sources">
+  <h3>📚 Sources & cross-references</h3>
+  <ul>
+    <li><a href="https://wurkkos.com/products/fc13" target="_blank" rel="noopener">Wurkkos FC13 official product page</a> — manufacturer spec sheet, XHP50B and SFT40 variant ordering</li>
+    <li><a href="https://zeroair.org/2023/05/08/wurkkos-fc13-flashlight-review/" target="_blank" rel="noopener">ZeroAir Reviews — FC13 (XHP50B)</a> — independent measurement: ~3800 lm at start, thermal stepdown documented</li>
+    <li><a href="https://liquidretro.net/2023/03/30/wurkkos-fc13-review-2000-lumens-32-anduril-2-usb-c/" target="_blank" rel="noopener">LiquidRetro — FC13 (SFT40)</a> — community measurement of the throw-biased variant</li>
+    <li><a href="https://budgetlightforum.com/t/review-wurkkos-fc13-2000-lumens-anduril-2-usb-c/217681" target="_blank" rel="noopener">BudgetLightForum (BLF) — FC13 XHP50B thread</a> — community measurements + reverse-charging edge cases</li>
+    <li><a href="https://budgetlightforum.com/t/wurkkos-fc13-all-versions-thorough-comparison-sfn43-xhp50-2-sft40/217152" target="_blank" rel="noopener">BLF — FC13 all-versions comparison thread</a> — SFN43 (discontinued) vs XHP50.2/XHP50B vs SFT40</li>
+    <li><a href="https://illumn.com" target="_blank" rel="noopener">Illumn</a> — 18650 cell sourcing (Samsung 30Q, Sony VTC6, Molicel P26A — non-affiliate vendor used for community-sourced recommendations)</li>
+  </ul>
+</div>
+
+<!-- Related reviews -->
+<h2>Related reviews</h2>
+<ul>
+  <li><a href="sofirn-sc31-pro.html">Sofirn SC31 Pro</a> — cheapest reliable Anduril 2 entry; slimmer pocket profile, no reverse charging</li>
+  <li><a href="sofirn-if25a.html">Sofirn IF25A</a> — 21700 sibling-class; sustained turbo + 95 CRI tint option (which the FC13 lacks)</li>
+  <li><a href="olight-baton-3-pro.html">Olight Baton 3 Pro</a> — premium alternative; simpler UI, magnetic charging, no Anduril, no reverse charging</li>
+  <li><a href="ultrafire-9800mah-warning.html">⚠️ Ultrafire "9800mAh" battery warning</a> — DO NOT use these in your FC13</li>
+</ul>
+
+<!-- Footer -->
+<footer>
+  <p>
+    <strong style="color: var(--accent);">As an Amazon Associate I earn from qualifying purchases.</strong>
+    <span lang="ja">本サイトは Amazon アソシエイト・プログラム参加者です <span class="pr-mark">(PR)</span></span>
+  </p>
+  <div class="links-row">
+    <a href="../../index.html">Portfolio</a>
+    <a href="../index.html">EDC home</a>
+    <a href="../about.html">Methodology</a>
+    <a href="index.html">All reviews</a>
+    <a href="../privacy.html">Privacy</a>
+    <a href="mailto:mk.madeinjapan@gmail.com">Email</a>
+    <a href="https://twitter.com/edc_lumen_log" target="_blank" rel="noopener">X</a>
+  </div>
+  <p>© 2026 EDC Lumen Log, a project of <a href="../../index.html">Masaki Made in Japan</a>. Built independently in Singapore.</p>
+  <p class="updated">Reviewed: 2026-05-24 · Last verified: 2026-05-24 (specs/data) · Will re-verify quarterly</p>
+</footer>
+
+</body>
+</html>

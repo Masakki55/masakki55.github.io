@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>⚠️ Ultrafire "9800mAh" 18650 Battery Warning — DO NOT BUY (Safety Education) | EDC Lumen Log</title>
+<meta name="description" content="Why fake-capacity 18650 batteries marketed as Ultrafire 9800mAh are both a performance fraud and a fire hazard. Li-ion chemistry caps 18650 capacity at ~3500mAh. Independent test data, CPSC warning context, vetted alternative cells.">
+<style>
+  :root {
+    --bg: #fefce8;
+    --text: #1c1917;
+    --text-dim: #78716c;
+    --accent: #b45309;
+    --accent-2: #fbbf24;
+    --accent-orange: #f97316;
+    --danger: #dc2626;
+    --danger-bg: #fee2e2;
+    --border: #d6d3d1;
+    --card-bg: #fff7ed;
+    --card-bg-2: #fffbeb;
+    --pure-card: #ffffff;
+    --hover: #fef3c7;
+    --good: #16a34a;
+    --good-bg: #dcfce7;
+    --highlight-yellow: #fef08a;
+  }
+  body { font-family: -apple-system, "Segoe UI", "Helvetica Neue", Inter, sans-serif; background: var(--bg); color: var(--text); max-width: 800px; margin: 0 auto; padding: 32px 24px; font-size: 20px; line-height: 1.7; }
+  nav { background: var(--card-bg); padding: 12px 16px; border-radius: 6px; margin-bottom: 24px; font-size: 0.85rem; border: 1px solid var(--border); }
+  nav a { margin-right: 14px; color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  nav .portfolio-link { color: var(--text-dim); }
+  h1 { color: var(--danger); font-size: 3rem; margin: 16px 0 12px; line-height: 1.15; font-weight: 800; letter-spacing: -0.01em; }
+  .one-liner { color: var(--accent); font-size: 1.4rem; font-style: italic; margin-bottom: 24px; line-height: 1.4; }
+  h2 { color: var(--text); font-size: 2rem; margin-top: 48px; margin-bottom: 16px; border-bottom: 3px solid var(--accent-2); padding-bottom: 8px; line-height: 1.2; font-weight: 800; }
+  h3 { color: var(--text); font-size: 1.5rem; margin-top: 28px; font-weight: 700; }
+  @media (max-width: 768px) {
+    body { font-size: 18px; padding: 20px 16px; }
+    h1 { font-size: 2rem; }
+    .one-liner { font-size: 1.15rem; }
+    h2 { font-size: 1.5rem; margin-top: 32px; }
+    h3 { font-size: 1.25rem; }
+  }
+  p, li { color: var(--text); margin-bottom: 10px; }
+  a { color: var(--accent); }
+  a:hover { background: var(--hover); }
+  ul, ol { margin-left: 24px; margin-bottom: 16px; }
+  code { background: var(--card-bg); padding: 2px 6px; border-radius: 3px; color: var(--text); font-size: 0.9em; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.92rem; }
+  th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { background: var(--card-bg); color: var(--text); font-weight: 700; }
+  tr:nth-child(even) td { background: var(--card-bg-2); }
+  .key-line { background: var(--highlight-yellow); padding: 2px 6px; font-weight: 600; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  .reading-time { display: inline-block; font-size: 0.85rem; color: var(--text-dim); padding: 4px 10px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 4px; margin-right: 8px; }
+  .review-figure { margin: 22px 0; text-align: center; }
+  .review-figure img { max-width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border); }
+  .review-figure figcaption { font-size: 0.85rem; color: var(--text-dim); margin-top: 8px; font-style: italic; line-height: 1.5; }
+  .danger-banner { background: var(--danger-bg); border: 2px solid var(--danger); border-radius: 8px; padding: 18px 22px; margin: 22px 0; }
+  .danger-banner h2 { border: none; margin-top: 0; color: var(--danger); font-size: 1.5rem; }
+  .danger-banner p { color: var(--text); margin-bottom: 6px; }
+  .danger-banner strong { color: var(--danger); }
+  .good-banner { background: var(--good-bg); border: 2px solid var(--good); border-radius: 8px; padding: 18px 22px; margin: 22px 0; }
+  .good-banner h2 { border: none; margin-top: 0; color: var(--good); font-size: 1.5rem; }
+  .good-banner strong { color: var(--good); }
+  .source-citation { background: var(--card-bg); border-left: 4px solid var(--accent); padding: 12px 16px; margin: 14px 0; font-size: 0.9rem; border-radius: 0 6px 6px 0; }
+  .source-citation strong { color: var(--accent); }
+  .pull-quote { font-size: 1.5rem; font-style: italic; line-height: 1.4; margin: 36px 8px 36px 24px; padding: 8px 0 8px 24px; border-left: 4px solid var(--danger); color: var(--text); font-weight: 500; }
+  .checklist { background: var(--card-bg-2); border-left: 4px solid var(--accent-2); padding: 16px 22px; border-radius: 0 6px 6px 0; margin: 18px 0; }
+  .checklist h3 { margin-top: 0; color: var(--accent); }
+  .sources { background: var(--card-bg); border-radius: 8px; padding: 14px 18px; margin: 16px 0; font-size: 0.9rem; border: 1px solid var(--border); }
+  .sources h3 { margin-top: 0; color: var(--accent); }
+  .sources ul { margin-bottom: 0; font-size: 0.88rem; }
+  footer { margin-top: 50px; padding-top: 22px; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--text-dim); }
+  footer .links-row { margin: 8px 0; }
+  footer .links-row a { color: var(--text-dim); margin-right: 12px; text-decoration: underline; }
+  footer .updated { font-size: 0.8rem; margin-top: 6px; }
+  footer .pr-mark { color: var(--accent-orange); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../../index.html" class="portfolio-link">← Portfolio</a>
+  <a href="../index.html">EDC home</a>
+  <a href="../about.html">Methodology</a>
+  <a href="index.html">All reviews</a>
+  <a href="../privacy.html">Privacy</a>
+</nav>
+
+<p style="color: var(--text-dim); font-size: 0.88rem; margin-bottom: 4px;">
+  <span class="reading-time">⏱ 9 min read</span>
+  Battery safety education · Posted: 2026-05-24
+</p>
+<h1>⚠️ Ultrafire "9800mAh" Battery Warning — DO NOT BUY</h1>
+<p class="one-liner">A safety post, not a product review. Why fake-capacity 18650 cells are both a performance fraud and a genuine fire risk — and which cells you should actually use instead.</p>
+
+<div style="background: var(--card-bg); border-left: 4px solid var(--accent-2); padding: 10px 16px; border-radius: 0 6px 6px 0; margin: 16px 0; font-size: 0.88rem; color: var(--text);">
+  <strong style="color: var(--accent);">Affiliate disclosure</strong>: As an Amazon Associate I earn from qualifying purchases. This page itself does not contain Amazon affiliate Buy links — it cross-links to the 9 flashlight reviews on this site, where the Buy links live. The vendor references in this post (Illumn, 18650BatteryStore, Nkon) are <strong>non-affiliate community-standard references</strong>. Once the Amazon Associates application for this site is approved, an affiliate tag will be inserted into the Amazon Buy links on the review pages. Reviews are not paid or sponsored — see <a href="../about.html">Methodology</a>.
+</div>
+
+<div class="danger-banner">
+  <h2>🚨 The 30-second version</h2>
+  <p>An 18650 lithium-ion cell at current chemistry limits caps at approximately <strong>3,400-3,600 mAh</strong>. Cells marketed as "Ultrafire 9800mAh," "TrustFire 9900mAh," "BestFire 12,000mAh," and similar — sold in multi-packs for $10-15 on Amazon, AliExpress, and eBay — are <strong>physically impossible</strong> at the claimed capacity.</p>
+  <p>Independent testing of these cells shows <strong>actual capacity around 500-800 mAh</strong> (5-8% of the labeled claim), <strong>no protection circuit installed despite "protected" labeling</strong>, and weight roughly 60% of a genuine cell. Used in modern high-output flashlights (5A+ draw), they can over-discharge and vent — a documented fire hazard the US CPSC has warned about specifically.</p>
+  <p>This post explains the chemistry, the documented failures, how to identify a fake before buying, and which cells you should actually use in any flashlight reviewed on this site.</p>
+</div>
+
+<!-- Visual: chemistry ceiling -->
+<figure class="review-figure">
+  <img src="imgs/ultrafire-chemistry-ceiling.png"
+       alt="Infographic: 18650 lithium-ion chemistry ceiling — genuine cell capacity caps at ~3500 mAh (Samsung 30Q 3000 mAh, Sony VTC6 3000 mAh, Panasonic NCR18650GA 3500 mAh), claimed 9800 mAh Ultrafire is 2.7x the physical maximum and chemistry-impossible at current technology"
+       width="1080" height="980"
+       loading="lazy">
+  <figcaption>
+    <strong>Site-generated infographic (HTML→PNG, EDC Lumen Log original).</strong> Li-ion 18650 cell capacity ceiling: <strong>~3,500-3,600 mAh maximum</strong> at current chemistry. Anything claimed above 3,600 mAh in 18650 format is chemistry-impossible. The "9800 mAh" claim is 2.7× the physical maximum. Capacity-ceiling data sources: lygte-info.dk (HKJ testing database) + Battery Mooch (BLF community tester) + 18650BatteryStore capacity guide + manufacturer datasheets (Samsung INR series, Sony/Murata VTC, Molicel INR, LG INR, Panasonic NCR).
+  </figcaption>
+</figure>
+
+<h2>What "Ultrafire 9800mAh" cells claim</h2>
+
+<p>Listings on Amazon, AliExpress, and eBay (documented as of 2026-05-24) under the "Ultrafire" brand name — and near-identical products under "BestFire," "TrustFire," "TangsFire," "GTL," "GTF," "GIF," and variants of "Fire-branded" sellers — typically list:</p>
+
+<ul>
+  <li><strong>Capacity</strong>: "9800mAh," "9900mAh," "12,000mAh," or "6,000mAh" on 18650 cells</li>
+  <li><strong>Labels</strong>: Yellow, blue, or orange wraparound shrink labels with bold capacity text</li>
+  <li><strong>Claims</strong>: "Protected," "High Capacity," "Li-ion," sometimes "1000 recharge cycles"</li>
+  <li><strong>Price</strong>: Multi-packs for $10-15 total ($2-4 per cell)</li>
+  <li><strong>Use cases listed</strong>: "compatible with flashlights, e-cigarettes, power tools"</li>
+</ul>
+
+<p>"Ultrafire," "TrustFire," and "BestFire" are nominally distinct brands, but in practice the counterfeit market uses these names interchangeably on cells from unknown OEM manufacturers. The legitimate Ultrafire and TrustFire companies from the early 2010s produced real (if mediocre) cells; today, products sold under these names on major marketplaces are overwhelmingly not from those manufacturers. <strong>The name means nothing — the spec claim is what reveals the fraud.</strong></p>
+
+<h2>What they actually are</h2>
+
+<p>These cells are re-packaged low-grade or recycled lithium cells, not manufactured-to-spec "9800mAh" cells. The <a href="https://lygte-info.dk/info/BatteriesRidiculousRatings%20UK.html" target="_blank" rel="noopener">lygte-info.dk testing database</a> (HKJ's independent battery testing project) documents the following actual capacities for cells claiming 9,800-9,900 mAh in 18650 format:</p>
+
+<table>
+  <thead>
+    <tr><th>Listed claim</th><th>Actual measured capacity</th><th>Source</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>UltraFire CN18650 9800mAh (Yellow)</td><td><strong>~500-800 mAh</strong> at 1A discharge</td><td>lygte-info.dk / <a href="https://budgetlightforum.com/t/test-review-of-ultrafire-cn18650-9800mah-yellow/55336" target="_blank" rel="noopener">BLF cross-post</a></td></tr>
+    <tr><td>UltraFire SZ18650 9900mAh (Yellow)</td><td>~500 mAh</td><td>lygte-info.dk</td></tr>
+    <tr><td>UltraFire SJ18650 6000mAh (Black)</td><td>~1,200 mAh</td><td>lygte-info.dk</td></tr>
+    <tr><td>Two eBay 9800mAh cells (DashCamTalk test)</td><td>518-548 mAh and 682-684 mAh at 0.5A</td><td><a href="https://dashcamtalk.com/forum/threads/i-got-me-some-9800mah-18650-batteries-from-ebay-for-testing.32599/" target="_blank" rel="noopener">DashCamTalk forum</a></td></tr>
+  </tbody>
+</table>
+
+<div class="source-citation">
+  <strong>HKJ / lygte-info.dk on the UltraFire CN18650 9800mAh:</strong> "A cheap battery with serious overstated capacity." At 2A discharge, the cells "start to lose voltage." At 5A, "they cannot really do anything." The discharge protection circuit claimed on the wrapper is <strong>not present</strong> — these are bare cells despite the labeling stating otherwise.
+</div>
+
+<p><strong>Physical tell</strong>: legitimate high-capacity 18650 cells weigh approximately <span class="key-line">43-50 grams</span>. Documented fake cells weigh <span class="key-line">25-30 grams</span> — the difference is the absence of electrode material. A true 9,800 mAh 18650 would weigh over 100g. These cells weigh 25g.</p>
+
+<h2>The chemistry ceiling — why 9,800 mAh is impossible</h2>
+
+<p>Lithium-ion cells store energy in the form of lithium ions intercalated into electrode materials. The capacity per unit volume is constrained by the chemistry of the electrode materials — primarily the lithium cobalt oxide (LiCoO₂), NMC, or NCA cathode material. These are physical constants, not manufacturing variables.</p>
+
+<h3>Documented capacity ceiling for 18650 format (2026)</h3>
+
+<ul>
+  <li><strong>Highest-capacity legitimate 18650 currently available</strong>: Panasonic/Sanyo NCR18650G at ~3,500-3,600 mAh (verified by Battery Mooch, BLF's primary independent cell tester, at <a href="https://www.tasteyourjuice.com/wordpress/the-battery-mooch" target="_blank" rel="noopener">tasteyourjuice.com</a>)</li>
+  <li><strong>Practical population of recommended cells</strong>: 2,600-3,500 mAh</li>
+  <li><strong>Anything above 3,600 mAh claimed for an 18650</strong>: chemistry-impossible at current technology</li>
+  <li><strong>9,800 mAh represents 2.7-2.8× the maximum possible capacity</strong> for this cell format</li>
+</ul>
+
+<p>For the larger 21700 format (21mm × 70mm), the capacity ceiling is approximately <strong>4,800-5,000 mAh</strong> in genuine cells from major manufacturers. Any 21700 claiming more than 5,000 mAh is also fake. <a href="https://www.18650batterystore.com/pages/best-18650-battery-guide" target="_blank" rel="noopener">18650BatteryStore's capacity guide</a> states this explicitly: "18650 batteries can't have higher capacity than 3600mAh."</p>
+
+<h2>Documented fire and venting incidents</h2>
+
+<div class="danger-banner">
+  <h2>🚨 CPSC formal warning</h2>
+  <p>The US Consumer Product Safety Commission (CPSC) has issued specific warnings about loose 18650 lithium-ion batteries sold on major online marketplaces, stating they can cause <strong>"serious injury or death"</strong> due to fire and explosion risk.</p>
+  <p>Reference: <a href="https://www.engadget.com/cpsc-warning-fire-risk-loose-18650-lithiumion-061613315.html" target="_blank" rel="noopener">Engadget's coverage of the CPSC warning</a>. A <a href="https://www.today.com/news/loose-lithium-ion-batteries-cause-fire-hazard-being-sold-major-t208884" target="_blank" rel="noopener">Today.com news report on the CPSC warnings</a> documented that 9 of 11 tested loose 18650 batteries from major websites were knockoffs.</p>
+</div>
+
+<h3>The mechanism</h3>
+
+<p>Fake cells typically lack the protection circuit claimed on the wrapper. Without protection, if the cell is over-discharged, over-charged, or shorted, there is no electronic protection trip. The cell can enter <strong>thermal runaway</strong> — a self-sustaining exothermic reaction that results in venting of hot gases, fire, and in enclosed spaces (like a flashlight tube), pressure buildup and rupture.</p>
+
+<p>Technical reference: <a href="https://www.firehouse.com/operations-training/article/55252277/fire-department-response-lithium-ion-battery-heat-release-rate-and-explosion-hazards" target="_blank" rel="noopener">Firehouse Magazine on Li-ion hazard response</a> provides documentation of heat-release rate and explosion mechanism for failing lithium-ion cells.</p>
+
+<h3>The flashlight-specific risk</h3>
+
+<p>Modern high-output EDC flashlights commonly draw <strong>5-20A at turbo</strong>. The Wurkkos FC13 XHP50B variant pulls ~20A peak. The Sofirn IF25A pulls ~6A. The Lumintop FW3A pulls ~10A+. A cell with no protection circuit and 500-800 mAh of actual capacity, asked to deliver these currents, is a fire waiting to happen.</p>
+
+<p>BLF community consensus treats "Ultrafire 9800mAh" as a standard example in battery safety discussions. The community thread on the <a href="https://budgetlightforum.com/t/test-review-of-ultrafire-cn18650-9800mah-yellow/55336" target="_blank" rel="noopener">UltraFire CN18650 9800mAh test</a> includes commentary noting humor at the implausibility, but also the sobering observation that the lack of protection circuit means these cells cannot safely be pushed in high-draw lights.</p>
+
+<!-- Pull quote -->
+<blockquote class="pull-quote">
+  "The 18650 chemistry ceiling is real and documented. The current record holder is around 3,600 mAh from Panasonic. 9,800 mAh is not possible in this format — not from any manufacturer, at any price."
+</blockquote>
+
+<h2>Safer alternatives by use case</h2>
+
+<div class="good-banner">
+  <h2>✅ The cells you should actually use</h2>
+  <p>All cells below are <strong>genuine, tested, and appropriate</strong> for flashlight use. All capacity figures are actual measured values from independent tests.</p>
+</div>
+
+<h3>18650 format (the cell most of the lights on this site use)</h3>
+
+<table>
+  <thead>
+    <tr><th>Use case</th><th>Cell</th><th>Actual capacity</th><th>Continuous drain</th><th>Where to buy</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>General EDC (best balance)</td><td>Samsung INR18650-30Q</td><td>3,000 mAh</td><td>15 A</td><td>Illumn, 18650BatteryStore</td></tr>
+    <tr><td>General EDC (alternative)</td><td>Sony/Murata VTC6</td><td>3,000 mAh</td><td>15 A</td><td>Illumn, 18650BatteryStore</td></tr>
+    <tr><td>High drain (FW3A, FC13 XHP50B)</td><td>Molicel INR18650-P26A</td><td>2,600 mAh</td><td>35 A</td><td>18650BatteryStore, Illumn</td></tr>
+    <tr><td>Maximum runtime</td><td>Molicel INR18650-M35A</td><td>3,500 mAh</td><td>10 A</td><td>Illumn, specialty vendors</td></tr>
+    <tr><td>Maximum runtime (alternative)</td><td>Panasonic/Sanyo NCR18650GA</td><td>3,500 mAh</td><td>10 A</td><td>Illumn, 18650BatteryStore</td></tr>
+  </tbody>
+</table>
+
+<h3>21700 format (do not confuse with 18650)</h3>
+
+<table>
+  <thead>
+    <tr><th>Use case</th><th>Cell</th><th>Actual capacity</th><th>Continuous drain</th><th>Notes</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>General high-performance EDC</td><td>Samsung INR21700-40T</td><td>4,000 mAh</td><td>35 A</td><td>Community go-to for floody 21700 lights</td></tr>
+    <tr><td>Maximum runtime</td><td>Molicel INR21700-P45B</td><td>4,500 mAh</td><td>45 A</td><td>Highest-capacity reliable 21700</td></tr>
+    <tr><td>Balance</td><td>Molicel INR21700-P42A</td><td>4,200 mAh</td><td>45 A</td><td>BLF community favorite for all-round use</td></tr>
+    <tr><td>Budget option</td><td>Samsung INR21700-50G</td><td>5,000 mAh</td><td>10 A</td><td>Maximum capacity, lower drain — check light's draw first</td></tr>
+  </tbody>
+</table>
+
+<p><strong>Samsung 30Q pricing reference</strong>: Illumn lists the Samsung INR18650-30Q button-top at ~$6.99/cell. 18650BatteryStore lists ~$6.99 (verified 2026-05-24). These are the correct prices for genuine cells. If you're seeing "9800mAh" 18650s at $2-3/cell in a 4-pack, the math alone tells you something is wrong.</p>
+
+<h3>Trusted vendors (non-affiliate references)</h3>
+
+<ul>
+  <li><strong><a href="https://illumn.com" target="_blank" rel="noopener">Illumn (illumn.com)</a></strong>: Authorized Molicel/NPE distributor. Community-standard reference across BLF and r/flashlight. Not affiliated with this site.</li>
+  <li><strong><a href="https://www.18650batterystore.com" target="_blank" rel="noopener">18650BatteryStore (18650batterystore.com)</a></strong>: Stocks Samsung, Sony, Molicel, LG. Clear labeling, US shipping.</li>
+  <li><strong><a href="https://nkon.nl" target="_blank" rel="noopener">Nkon (nkon.nl)</a></strong>: EU-based, extensive cell inventory including Molicel, Samsung, Panasonic. Highly rated in European flashlight community.</li>
+</ul>
+
+<h2>How to spot a fake — checklist before you buy</h2>
+
+<div class="checklist">
+  <h3>📋 Chemistry-impossibility check (the fastest filter)</h3>
+  <p>For 18650 format, any claimed capacity above <strong>3,600 mAh is impossible</strong> with current lithium-ion technology. Stop reading the listing. This applies regardless of brand name, number of "reviews," or listing language.</p>
+  <ul>
+    <li><strong>21700 format</strong>: any claim above 5,000 mAh is suspect. Above 5,500 mAh is impossible.</li>
+    <li><strong>16340 format</strong> (CR123A size): any claim above 800 mAh is impossible.</li>
+    <li><strong>14500 format</strong> (AA size lithium): any claim above 900 mAh is impossible.</li>
+  </ul>
+</div>
+
+<h3>Listing pattern red flags (documented from Amazon / AliExpress monitoring)</h3>
+
+<ol>
+  <li><strong>Multiple "mAh" formats in same listing</strong>: Listings saying "9800mAh / 9.8Ah / High Capacity" are trying to make an impossible number look legitimate through repetition and unit reformatting.</li>
+  <li><strong>"Protected" claimed with no circuit board visible in photos</strong>: Legitimate protected cells have a small circuit board under the positive cap, creating a slight extension. Fake "protected" cells are bare cells with the claim printed on the wrapper.</li>
+  <li><strong>Price well below market for the claimed capacity</strong>: Genuine 3,000-3,500 mAh 18650 cells from Samsung, Molicel, or Sony cost $5-8 each from reputable US vendors. A 4-pack of "9800mAh" cells for $12 = $3/cell. At that price, you're not getting 9,800 mAh — you're getting whatever they stuffed into the wrapper.</li>
+  <li><strong>"Fire" brand names</strong>: Ultrafire, TrustFire, BestFire, TangsFire, GTF, GTL, GIF. These have become synonymous with fake capacity cells. This doesn't mean every cell with these names is dangerous — some are just weak and low-capacity — but none should be trusted for high-drain flashlight use.</li>
+  <li><strong>No manufacturer data sheet or MSDS available</strong>: Legitimate cells from Samsung, Molicel, Panasonic, Sony, and LG have publicly downloadable datasheets. If you can't find one for the cell, that cell is not from a major manufacturer.</li>
+  <li><strong>Weight</strong>: A genuine 18650 cell weighs 43-50 grams. You can verify this without any equipment. A fake cell often weighs 25-30 grams because the electrode material is thin or absent.</li>
+</ol>
+
+<p>HKJ's documented approach at <a href="https://lygte-info.dk/info/BatteriesRidiculousRatings%20UK.html" target="_blank" rel="noopener">lygte-info.dk's "Batteries with Ridiculous Ratings"</a> notes that cells claiming impossible capacities can be quickly identified by weight deviating significantly from known-good values. Protected cells are ~70mm long; unprotected bare cells are ~65mm. A cell claiming to be "protected" that measures 65mm is a bare cell with a fraudulent label.</p>
+
+<h2>The honest summary</h2>
+
+<div class="good-banner">
+  <h2>✅ What to do instead</h2>
+  <ol>
+    <li><strong>Pay $5-8 per cell</strong> for a Samsung 30Q or Sony VTC6 from <a href="https://illumn.com" target="_blank" rel="noopener">Illumn</a> or <a href="https://www.18650batterystore.com" target="_blank" rel="noopener">18650BatteryStore</a>.</li>
+    <li><strong>Verify the cell exists in the manufacturer's catalog</strong> with a published datasheet (Samsung INR series, Sony/Murata VTC, Molicel INR, LG INR).</li>
+    <li><strong>Avoid anything with a "Fire" brand name</strong> at any capacity claim. They're nominally distinct brands but in practice not differentiated in the counterfeit market.</li>
+    <li><strong>Check the weight</strong>. 43-50g is the legitimate range for an 18650; significantly below that is a fake.</li>
+    <li><strong>If you already own counterfeit cells</strong>, dispose of them via local battery recycling (do NOT throw in regular trash — they remain a fire hazard). Replace with vetted cells from the table above.</li>
+  </ol>
+</div>
+
+<!-- Sources -->
+<div class="sources">
+  <h3>📚 Sources & references</h3>
+  <ul>
+    <li><a href="https://lygte-info.dk/info/BatteriesRidiculousRatings%20UK.html" target="_blank" rel="noopener">lygte-info.dk — "Batteries with Ridiculous Ratings"</a> — HKJ's catalog of 30+ documented fake-capacity cells with test data</li>
+    <li><a href="https://lygte-info.dk/review/batteries2012/UltraFire%20CN18650%209800mAh%20(Yellow)%20UK.html" target="_blank" rel="noopener">lygte-info.dk — UltraFire CN18650 9800mAh (Yellow) test</a> — discharge curves, capacity measurement (~500-800 mAh actual), missing protection circuit confirmation</li>
+    <li><a href="https://www.18650batterystore.com/pages/best-18650-battery-guide" target="_blank" rel="noopener">18650BatteryStore — capacity guide</a> — explicit statement: "18650 batteries can't have higher capacity than 3600mAh"</li>
+    <li><a href="https://www.tasteyourjuice.com/wordpress/the-battery-mooch" target="_blank" rel="noopener">Battery Mooch — independent cell testing</a> — BLF community's primary cell tester, comprehensive testing of legitimate and fake cells</li>
+    <li><a href="https://www.engadget.com/cpsc-warning-fire-risk-loose-18650-lithiumion-061613315.html" target="_blank" rel="noopener">Engadget — CPSC warning coverage</a> — official US safety commission warning about loose 18650 cells from major marketplaces</li>
+    <li><a href="https://www.today.com/news/loose-lithium-ion-batteries-cause-fire-hazard-being-sold-major-t208884" target="_blank" rel="noopener">Today.com — CPSC fire hazard coverage</a> — 9 of 11 tested loose 18650 batteries were knockoffs</li>
+    <li><a href="https://www.firehouse.com/operations-training/article/55252277/fire-department-response-lithium-ion-battery-heat-release-rate-and-explosion-hazards" target="_blank" rel="noopener">Firehouse Magazine — Li-ion battery hazard technical reference</a> — heat-release rate and explosion mechanism documentation</li>
+    <li><a href="https://budgetlightforum.com/t/test-review-of-ultrafire-cn18650-9800mah-yellow/55336" target="_blank" rel="noopener">BudgetLightForum (BLF) — UltraFire CN18650 9800mAh test thread</a> — community discussion + cross-post of HKJ's testing</li>
+    <li><a href="https://dashcamtalk.com/forum/threads/i-got-me-some-9800mah-18650-batteries-from-ebay-for-testing.32599/" target="_blank" rel="noopener">DashCamTalk — eBay 9800mAh test thread</a> — independent purchase + measurement of two cells (518-684 mAh actual)</li>
+    <li><a href="https://www.candlepowerforums.com/threads/fake-ultrafire-18650-battery-warning.316888/page-3" target="_blank" rel="noopener">CPF — Ultrafire fake battery warning thread</a> — community-documented photos and discussion</li>
+    <li><a href="https://thecounterfeitreport.com/product/642/18650-Batteries.html" target="_blank" rel="noopener">The Counterfeit Report — 18650 consumer alert</a> — photos of counterfeit listings from major online marketplaces</li>
+  </ul>
+</div>
+
+<!-- Related reviews -->
+<h2>Related reviews</h2>
+<p>Every flashlight reviewed on EDC Lumen Log uses standard 18650 or 21700 cells from the vendors listed above. None of them use proprietary cells (except the Olight Baton 3 Pro, which uses an Olight proprietary 18650-format cell with magnetic charging contacts — available from Olight directly). <strong>Never substitute "Ultrafire 9800mAh" or similar cells into any of these lights.</strong></p>
+<ul>
+  <li><a href="sofirn-if25a.html">Sofirn IF25A</a> — uses standard 21700 cells (Samsung 40T, Molicel P42A)</li>
+  <li><a href="sofirn-sc31-pro.html">Sofirn SC31 Pro</a> — uses standard 18650 cells (Samsung 30Q, Sony VTC6)</li>
+  <li><a href="wurkkos-fc13.html">Wurkkos FC13</a> — uses standard 18650 cells</li>
+  <li><a href="olight-baton-3-pro.html">Olight Baton 3 Pro</a> — proprietary 18650-format cell only; never substitute counterfeits</li>
+  <li><a href="fenix-pd36r-pro.html">Fenix PD36R Pro</a> — uses 21700 button-top cells only</li>
+  <li><a href="acebeam-e70-mini.html">Acebeam E70 Mini</a> — uses standard 18650 cells</li>
+  <li><a href="convoy-s2-plus.html">Convoy S2+</a> — uses standard 18650 cells</li>
+  <li><a href="skilhunt-m200-v3.html">Skilhunt M200 V3</a> — uses standard 18650 cells (Samsung 30Q included)</li>
+  <li><a href="lumintop-fw3a.html">Lumintop FW3A</a> — uses unprotected flat-top 18650 cells</li>
+</ul>
+
+<!-- Footer -->
+<footer>
+  <p>
+    <strong style="color: var(--accent);">As an Amazon Associate I earn from qualifying purchases.</strong>
+    None of the cell vendors linked in this post (Illumn, 18650BatteryStore, Nkon) are affiliate links — these are community-standard non-affiliate references used by BLF and r/flashlight. No vendor on this post pays for placement.
+    <span lang="ja">本サイトは Amazon アソシエイト・プログラム参加者です <span class="pr-mark">(PR)</span></span>
+  </p>
+  <div class="links-row">
+    <a href="../../index.html">Portfolio</a>
+    <a href="../index.html">EDC home</a>
+    <a href="../about.html">Methodology</a>
+    <a href="index.html">All reviews</a>
+    <a href="../privacy.html">Privacy</a>
+    <a href="mailto:mk.madeinjapan@gmail.com">Email</a>
+    <a href="https://twitter.com/edc_lumen_log" target="_blank" rel="noopener">X</a>
+  </div>
+  <p>© 2026 EDC Lumen Log, a project of <a href="../../index.html">Masaki Made in Japan</a>. Built independently in Singapore.</p>
+  <p class="updated">Posted: 2026-05-24 · Last verified: 2026-05-24 (sources / pricing / chemistry data) · Will re-verify quarterly</p>
+</footer>
+
+</body>
+</html>

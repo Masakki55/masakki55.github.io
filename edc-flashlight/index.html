@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EDC Lumen Log — Flashlight reviews from someone who actually carries one</title>
+<meta name="description" content="Honest, source-cited reviews of EDC (Every Day Carry) flashlights with multi-month carry reports. Android app + companion review site by Masaki Made in Japan. No sponsored content. Amazon affiliate disclosed.">
+<style>
+  :root {
+    --bg: #1a1208;
+    --bg-card: #2d2010;
+    --bg-card-hover: #3a2410;
+    --text: #fde68a;
+    --text-dim: #b08d57;
+    --accent: #fbbf24;
+    --accent-2: #f97316;
+    --border: #3a2410;
+  }
+  body {
+    font-family: -apple-system, "Segoe UI", "Helvetica Neue", Inter, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 32px 24px;
+    line-height: 1.7;
+  }
+  nav {
+    background: var(--bg-card);
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 24px;
+    font-size: 0.92rem;
+  }
+  nav a { margin-right: 14px; color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  nav .portfolio-link { color: var(--text-dim); }
+
+  /* HERO (single primary CTA above fold) */
+  .hero {
+    text-align: center;
+    padding: 16px 0 28px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 28px;
+  }
+  .hero h1 {
+    color: var(--accent);
+    font-size: 1.8rem;
+    margin: 0 0 12px;
+    line-height: 1.3;
+  }
+  .hero .sub {
+    color: var(--text);
+    font-size: 1.02rem;
+    margin: 0 0 18px;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero .primary-cta {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--bg);
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 8px 0;
+  }
+  .hero .primary-cta:hover { background: #fcd34d; }
+  .hero .secondary-line {
+    color: var(--text-dim);
+    font-size: 0.88rem;
+    margin-top: 10px;
+  }
+  .hero .secondary-line span { margin: 0 6px; }
+
+  h2 {
+    color: var(--accent);
+    font-size: 1.3rem;
+    margin-top: 36px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 6px;
+  }
+  h3 { color: var(--accent); font-size: 1.05rem; margin-top: 22px; }
+  p, li { color: var(--text); margin-bottom: 10px; }
+  a { color: var(--accent); }
+  ul { margin-left: 24px; margin-bottom: 16px; }
+  code { background: var(--bg-card); padding: 2px 6px; border-radius: 3px; color: var(--accent); font-size: 0.9em; }
+
+  /* PROBLEM block (PAS) */
+  .problem-block {
+    background: var(--bg-card);
+    border-left: 4px solid var(--accent-2);
+    padding: 16px 20px;
+    border-radius: 0 6px 6px 0;
+    margin: 18px 0;
+    font-style: italic;
+  }
+  .problem-block .label {
+    color: var(--accent-2);
+    font-weight: 600;
+    font-size: 0.85rem;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  /* FEATURED REVIEW grid */
+  .review-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+    margin: 18px 0;
+  }
+  .review-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    transition: background 0.15s;
+  }
+  .review-card:hover { background: var(--bg-card-hover); border-color: var(--accent); }
+  .review-card a { font-weight: 600; text-decoration: none; }
+  .review-card .verdict {
+    color: var(--text-dim);
+    font-size: 0.88rem;
+    font-style: italic;
+    margin-top: 6px;
+  }
+  .review-card .meta {
+    color: var(--text-dim);
+    font-size: 0.78rem;
+    margin-top: 6px;
+  }
+
+  /* N-MONTH CARRY CALLOUT (differentiation) */
+  .carry-callout {
+    background: var(--bg-card);
+    border: 1px dashed var(--accent);
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin: 22px 0;
+  }
+  .carry-callout h3 {
+    margin-top: 0;
+    color: var(--accent);
+  }
+  .carry-callout .label {
+    color: var(--accent-2);
+    font-weight: 600;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  /* COMPARISON TABLE */
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.92rem; }
+  th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+  th { background: var(--bg-card); color: var(--accent); }
+
+  /* AFFILIATE DISCLOSURE */
+  .disclosure-block {
+    background: var(--bg-card);
+    border-left: 4px solid var(--accent);
+    padding: 12px 18px;
+    border-radius: 0 6px 6px 0;
+    margin: 18px 0;
+    font-size: 0.9rem;
+  }
+  .disclosure-block strong { color: var(--accent); }
+  .disclosure-block .pr-mark { color: var(--accent-2); font-weight: 600; }
+
+  /* FAQ */
+  .faq-item {
+    background: var(--bg-card);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 10px 0;
+  }
+  .faq-item .q {
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .faq-item .a {
+    color: var(--text);
+    margin-bottom: 0;
+  }
+
+  /* FOOTER */
+  footer {
+    margin-top: 50px;
+    padding-top: 22px;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--text-dim);
+  }
+  footer .links-row { margin: 8px 0; }
+  footer .links-row a { color: var(--text-dim); margin-right: 12px; text-decoration: underline; }
+  footer .updated { font-size: 0.8rem; margin-top: 6px; }
+  footer .pr-mark { color: var(--accent-2); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="portfolio-link">← Portfolio</a>
+  <a href="index.html"><strong>Home</strong></a>
+  <a href="about.html">Methodology</a>
+  <a href="reviews/">Reviews</a>
+  <a href="privacy.html">Privacy Policy</a>
+  <a href="https://twitter.com/edc_lumen_log" target="_blank" rel="noopener">X</a>
+</nav>
+
+<!-- HERO: benefit-first H1, single primary CTA -->
+<section class="hero">
+  <h1>🔦 Flashlight reviews from someone who actually carries one.</h1>
+  <p class="sub">
+    Honest, source-cited reviews of 60-75 EDC (Every Day Carry) flashlights with
+    <strong>multi-month carry reports</strong>. No sponsored content. Toyota Camry of flashlights — never exciting, never breaks.
+  </p>
+  <a href="reviews/" class="primary-cta">Browse 10 featured reviews →</a>
+  <p class="secondary-line">
+    <span>🔒 No analytics</span> ·
+    <span>📶 Offline app</span> ·
+    <span>🇺🇸🇯🇵🇸🇬 Multi-region Amazon</span> ·
+    <span>📅 App launching 2026 Q4</span>
+  </p>
+</section>
+
+<!-- AFFILIATE DISCLOSURE (above-the-fold per Codex finding) -->
+<div class="disclosure-block">
+  <strong>Affiliate disclosure</strong>: As an Amazon Associate I earn from qualifying purchases.
+  Some Buy links on this site and inside the companion Android app are Amazon affiliate links
+  (Amazon.com / Amazon.co.jp / Amazon.sg). Reviews are not paid or sponsored by manufacturers —
+  see <a href="about.html">Methodology</a> for the no-vendor-money policy.
+</div>
+
+<!-- PROBLEM (PAS framework, lead with pain) -->
+<h2>The problem</h2>
+<div class="problem-block">
+  <span class="label">If you've ever shopped for an EDC light...</span>
+  Every flashlight "best of" list is affiliate-optimized. The premium-tier tactical light gets pushed.
+  The budget Sofirn that actually outlasts it in your pocket doesn't pay enough commission.
+  Spec sheets lie ("9800mAh 18650"? Impossible — Li-ion chemistry caps at ~3500mAh).
+  Reddit threads scatter. YouTube reviewers are sponsored 90% of the time.
+</div>
+
+<p>EDC Lumen Log is what I built for myself after 8 years of carrying flashlights daily and getting tired of trusting reviewers who'd never actually carried the lights they reviewed.</p>
+
+<!-- N-MONTH CARRY CALLOUT (differentiation — no competitor uses this) -->
+<div class="carry-callout">
+  <span class="label">What's different here</span>
+  <h3>📅 Every review includes a multi-month carry report</h3>
+  <p style="margin-bottom: 0;">
+    Most reviews are "20 minutes out of the box, looks great." Mine include
+    <strong>"8 months daily carry"</strong> or <strong>"12 months weekend use"</strong> notes —
+    pocket lint patterns, anodizing wear, real cell-degradation behavior, clip fatigue.
+    This is the thing I wanted from reviewers and never got.
+  </p>
+</div>
+
+<!-- FEATURED REVIEWS -->
+<h2>Featured reviews</h2>
+<p>10 detailed reviews live on this site. The Android app contains the complete catalog (60-75 lights) with side-by-side spec comparison.</p>
+
+<div class="review-grid">
+  <div class="review-card">
+    <a href="reviews/sofirn-if25a.html">Sofirn IF25A</a>
+    <div class="verdict">Quiet 21700 upgrade from SC31 Pro</div>
+    <div class="meta">3800 lm (claimed) · 21700 cell · IPX8 · Anduril 2 UI</div>
+  </div>
+  <div class="review-card">
+    <a href="reviews/sofirn-sc31-pro.html">Sofirn SC31 Pro</a>
+    <div class="verdict">Toyota Camry of pocket lights</div>
+    <div class="meta">2000 lm (measured higher) · 18650 cell · IPX8 · USB-C</div>
+  </div>
+  <div class="review-card">
+    <a href="reviews/wurkkos-fc13.html">Wurkkos FC13</a>
+    <div class="verdict">Anduril 2 + reverse-charging budget value</div>
+    <div class="meta">3400 lm · 18650 cell · IPX8 · XHP50B or SFT40 variants</div>
+  </div>
+  <div class="review-card">
+    <a href="reviews/olight-baton-3-pro.html">Olight Baton 3 Pro</a>
+    <div class="verdict">Premium magnetic charging convenience</div>
+    <div class="meta">1500 lm · proprietary 18650 (ORB-186C32) · IPX8 · MCC dock</div>
+  </div>
+  <div class="review-card">
+    <a href="reviews/fenix-pd36r-pro.html">Fenix PD36R Pro</a>
+    <div class="verdict">Tactical-leaning premium 21700 EDC</div>
+    <div class="meta">2800 lm · 21700 cell · IP68 · button-top only · 30s Turbo burst</div>
+  </div>
+  <div class="review-card">
+    <a href="reviews/acebeam-e70-mini.html">Acebeam E70 Mini</a>
+    <div class="verdict">Compact 18650 EDC powerhouse</div>
+    <div class="meta">~2000 lm · 18650 cell · IPX8 · pocket-friendly EDC</div>
+  </div>
+  <div class="review-card">
+    <a href="reviews/convoy-s2-plus.html">Convoy S2+</a>
+    <div class="verdict">Modder's host — emitter swap classic</div>
+    <div class="meta">1200 lm · 18650 cell · IPX7 · 9+ emitter swap options</div>
+  </div>
+  <div class="review-card">
+    <a href="reviews/skilhunt-m200-v3.html">Skilhunt M200 V3</a>
+    <div class="verdict">Magnetic charging on a budget</div>
+    <div class="meta">2300 lm · 18650 cell · IPX8 · magnetic charge dock</div>
+  </div>
+  <div class="review-card">
+    <a href="reviews/lumintop-fw3a.html">Lumintop FW3A</a>
+    <div class="verdict">Anduril UI in a tiny 18650 — cult favorite (discontinued)</div>
+    <div class="meta">2800 lm peak / ~813 lm sustained · 18650 · IPX8</div>
+  </div>
+  <div class="review-card">
+    <a href="reviews/ultrafire-9800mah-warning.html">⚠️ Ultrafire "9800mAh" warning</a>
+    <div class="verdict">DO NOT BUY — fake capacity, fire risk</div>
+    <div class="meta">Battery safety post · use vetted cells instead</div>
+  </div>
+</div>
+
+<!-- COMPARISON: site vs app -->
+<h2>This site vs the Android app</h2>
+<table>
+  <thead><tr><th>Feature</th><th>This site</th><th>Android app</th></tr></thead>
+  <tbody>
+    <tr><td>Number of reviews</td><td>10 featured</td><td>60-75 at launch</td></tr>
+    <tr><td>Side-by-side spec compare</td><td>—</td><td>✅ Up to 3 lights</td></tr>
+    <tr><td>4-axis ratings (Build/Runtime/Pocket/Value)</td><td>✅</td><td>✅</td></tr>
+    <tr><td>Reference articles (specs, batteries)</td><td>—</td><td>✅ 30 articles</td></tr>
+    <tr><td>Offline</td><td>—</td><td>✅ Fully offline</td></tr>
+    <tr><td>Multi-region Amazon links (US/JP/SG)</td><td>✅</td><td>✅</td></tr>
+    <tr><td>Languages</td><td>English</td><td>English + Japanese</td></tr>
+  </tbody>
+</table>
+
+<!-- FAQ -->
+<h2>FAQ</h2>
+
+<div class="faq-item">
+  <p class="q">Why don't you just review on YouTube?</p>
+  <p class="a">YouTube reviews are 90% sponsored. The economics force creators to push high-margin tactical lights instead of the budget-tier light that's actually better in the pocket. An app-based review keeps revenue separated from review content (the app is free; affiliate is opt-in by the reader).</p>
+</div>
+
+<div class="faq-item">
+  <p class="q">How do you measure lumens / candela?</p>
+  <p class="a">I don't have a calibrated integrating sphere. For measured values I cross-reference 1Lumen.com, ZeroAir, and BLF threads (community-trusted measurement sources). For claimed values I quote the manufacturer spec sheet. Both are presented side-by-side per review so you can see when they diverge.</p>
+</div>
+
+<div class="faq-item">
+  <p class="q">What's an "EDC" flashlight?</p>
+  <p class="a">Every Day Carry — a flashlight small enough to pocket every day. Usually under 130g, under 120mm length, with a clip. The opposite of a "tactical" or "search and rescue" light (which are heavier, brighter, and designed for specific high-stress use cases).</p>
+</div>
+
+<div class="faq-item">
+  <p class="q">When is the app launching?</p>
+  <p class="a">Closed Testing 2026 Q3, public launch target 2026 Q4. This review website is live now and gets updated as new reviews are published — see "Last updated" at the bottom of each review.</p>
+</div>
+
+<div class="faq-item">
+  <p class="q">What gets a "do not buy" rating?</p>
+  <p class="a">Anything with fake specs (Ultrafire's 9800mAh claim is the canonical example), drugstore-tier IPX4 in 2026, or known fire safety issues. We don't soften "do not buy" verdicts — see the <a href="reviews/ultrafire-9800mah-warning.html">Ultrafire warning</a>.</p>
+</div>
+
+<!-- WHO IT'S FOR (Unity / shared identity) -->
+<h2>Who this is for</h2>
+<p>
+  For people who <strong>actually carry a flashlight every day</strong> — not for someone buying their first or shopping for "the brightest one for emergencies". Specifically:
+</p>
+<ul>
+  <li>EDC enthusiasts who already carry 5-30 flashlights and need a fast comparison reference</li>
+  <li>Beginner buyers tired of "best of all time" YouTube clickbait</li>
+  <li>r/flashlight crossover community members</li>
+  <li>SG / JP local users wanting region-aware purchase recommendations</li>
+</ul>
+
+<!-- ABOUT THE REVIEWER (Authority + Liking) -->
+<h2>Who's writing these reviews</h2>
+<p>
+  <strong>Masaki</strong>, solo developer based in Singapore, publishing under
+  <a href="../index.html"><strong>Masaki Made in Japan</strong></a>.
+  8 years of daily EDC carry (started 2018), ~30 flashlights tested across that span.
+  Reviews are based on hands-on carry experience plus cross-checked against community
+  measurement sources (1Lumen, ZeroAir, BLF threads). Source URLs are listed on every review page.
+</p>
+
+<p>
+  <strong>Email</strong>: <a href="mailto:mk.madeinjapan@gmail.com">mk.madeinjapan@gmail.com</a> ·
+  <strong>X / Twitter</strong>: <a href="https://twitter.com/edc_lumen_log" target="_blank" rel="noopener">@edc_lumen_log</a> (review suggestions welcome)
+</p>
+
+<!-- FINAL CTA -->
+<h2>Browse the reviews</h2>
+<p style="text-align: center; margin: 20px 0;">
+  <a href="reviews/" class="primary-cta" style="display: inline-block; background: var(--accent); color: var(--bg); padding: 12px 28px; border-radius: 6px; font-weight: 600; text-decoration: none;">Browse 10 featured reviews →</a>
+</p>
+
+<!-- FOOTER (every-page disclosure for compliance) -->
+<footer>
+  <p>
+    <strong>As an Amazon Associate I earn from qualifying purchases.</strong>
+    Reviews are not paid or sponsored — see <a href="about.html">Methodology</a>.
+  </p>
+  <div class="links-row">
+    <a href="../index.html">Portfolio</a>
+    <a href="about.html">Methodology</a>
+    <a href="reviews/">All reviews</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="mailto:mk.madeinjapan@gmail.com">Email</a>
+    <a href="https://twitter.com/edc_lumen_log" target="_blank" rel="noopener">X</a>
+  </div>
+  <p>© 2026 EDC Lumen Log, a project of <a href="../index.html">Masaki Made in Japan</a>. Built independently in Singapore. No vendor sponsorship.</p>
+  <p class="updated">Last updated: 2026-05-24</p>
+</footer>
+
+</body>
+</html>
